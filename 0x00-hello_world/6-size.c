@@ -1,5 +1,5 @@
 #include <stdio.h>
-/*
+/**
  * Main - Entry point
  *
  * Description: A cprogram that prints with the printf function
