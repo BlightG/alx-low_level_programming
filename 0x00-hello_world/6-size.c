@@ -1,10 +1,10 @@
 #include <stdio.h>
 /*
- * main - starting point of the script
+ * Main - Entry point
  *
- * description - scripts prints out size of the bytes for the diffrent variable types on this
- *               machine
+ * Description: A cprogram that prints with the printf function
  *
+ * Retur: Always 0 (success)
  */
 int main(void)
 {
