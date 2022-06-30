@@ -1,11 +1,11 @@
 #include <stdio.h>
 /**
- * Main - Entry point
+ * main - Entry point
  *
- * Description: A cprogram that prints with the printf function
+ * Description: A c program that prints with the printf function
  *
  * Return: Always 0 (success)
- */
+*/
 int main(void)
 {
 	printf("Size of a char: %d byte(s)\n", sizeof(char));
