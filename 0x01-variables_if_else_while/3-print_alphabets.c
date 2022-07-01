@@ -1,24 +1,23 @@
 #include <stdio.h>
 /**
+ * main - Entry point
  *
- * Main - entry point
+ * Description: A C program that prints with printf function.
  *
- * description puts
- *
- * return upper and lower case alphabet
- *
+ * Return: Always 0 (Success)
 */
-int main (void)
+int main(void)
 {
-	char  a ='A';
-	for (char A = 'a';A <= 'z'; A++)
+	char  a = 'A';
+
+	for (char A = 'a'; A <= 'z'; A++)
 	{
-		for (char  a ='A'; a <= 'Z' ; a++)
+		for (char  a = 'A'; a <= 'Z' ; a++)
 		{
 			putchar(a);
 		}
 		putchar(A);
-	}	
+	}
 	putchar('\n');
-	return(0);
+	return (0);
 }

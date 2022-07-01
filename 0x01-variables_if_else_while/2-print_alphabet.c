@@ -1,20 +1,20 @@
 #include <stdio.h>
 /**
- * main- enttry point
+ * main - Entry point
  *
- * uses putchar to print alphabet
+ * Description: A C program that prints with printf function.
  *
- * Returns alphabet (a-Z)
- *
+ * Return: Always 0 (Success)
 */
 int main(void)
 {
-	char A='a';
-		while ( A <= 'z' )
-		{
-			putchar(A);
-			A++; 
-		}
+	char A = 'a';
+
+	while (A <= 'z')
+	{
+		putchar(A);
+		A++;
+	}
 	putchar('\n');
 	return (0);
 }

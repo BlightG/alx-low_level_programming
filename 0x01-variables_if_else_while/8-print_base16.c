@@ -1,12 +1,11 @@
 #include <stdio.h>
 /**
- * Main: Entry point
+ * main - Entry point
  *
- * Description - prints hex from o-f
+ * Description: A C program that prints with printf function.
  *
- * Return: 0 (Sucsess)
-*/
-
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	for (int a = 0; a < 9; a++)

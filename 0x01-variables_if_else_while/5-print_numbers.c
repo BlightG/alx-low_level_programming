@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * Main - entry point
+ * main - Entry point
  *
- * descrption prints using printf
+ * Description: A C program that prints with printf function.
  *
  * Return: Always 0 (Success)
 */
