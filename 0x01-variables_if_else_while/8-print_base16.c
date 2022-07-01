@@ -8,11 +8,14 @@
  */
 int main(void)
 {
-	for (int a = 0; a < 9; a++)
+	int a;
+	char A;
+
+	for (a = 0; a < 9; a++)
 	{
 		putchar(a);
 	}
-	for (char A = 'a'; A < 'f'; A++)
+	for (A = 'a'; A < 'f'; A++)
 	{
 		putchar(A);
 	}
