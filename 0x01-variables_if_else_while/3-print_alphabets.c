@@ -14,11 +14,11 @@ int main(void)
 
 	for (A = 'a'; A <= 'z'; A++)
 	{
-		for (a = 'A'; a <= 'Z' ; a++)
-		{
-			putchar(a);
-		}
-		putchar(A);
+		putchar(A);	
+	}
+	for (a = 'A'; a <= 'Z' ; a++)
+	{
+		putchar(a);
 	}
 	putchar('\n');
 	return (0);
