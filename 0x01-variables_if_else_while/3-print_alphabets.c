@@ -10,7 +10,9 @@ int main(void)
 {
 	char  a = 'A';
 
-	for (char A = 'a'; A <= 'z'; A++)
+	char A = 'a';
+
+	for (A = 'a'; A <= 'z'; A++)
 	{
 		for (char  a = 'A'; a <= 'Z' ; a++)
 		{
