@@ -18,12 +18,11 @@ int main(void)
 		{
 			putchar(A + 48);
 			putchar(B + 48);
-			if (A == 9 && B == 8)
+			if (A != 8 || B != 9)
 			{
-				break;
+				putchar(',');
+				putchar(' ');
 			}
-			putchar(',');
-			putchar(' ');
 		}
 	}
 	putchar('\n');
