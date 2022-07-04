@@ -11,7 +11,7 @@ int main(void)
 {
 int A, B, C, D;
 
-	for (A = 1; A <= 9; A++)
+	for (A = 0; A <= 9; A++)
 	{
 		for (B = 0; B <= 9; B++)
 		{
@@ -19,6 +19,10 @@ int A, B, C, D;
 			{
 				for (D = 0; D <= 9; D++)
 				{
+					if (A == 0 && B == 0 && C == 0)
+					{
+						D = D + 1;   
+					}
 					putchar(A + 48);
 					putchar(B + 48);
 					putchar(' ');
