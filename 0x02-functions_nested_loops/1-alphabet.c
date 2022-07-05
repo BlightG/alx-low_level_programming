@@ -4,8 +4,12 @@
  * description: uses print alphabetfunction to print alphabet
  * return: 0
 */
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+     int Alpha;
+     for (Alpha = 'a' ; Alpha <= 'z' ; Alpha++)
+     {
+     _putchar(Alpha);
+     }
+     _putchar('\n');
 }
