@@ -1,10 +1,9 @@
 #include <ctype.h>
 /**
  * _islower - checks if c is lowercase or uppercasae
- * int c - is vriable to be checked
- * return - 1 if lower 0 if not lower
+ * @c: is vriable to be checked
+ * Return: 1 if 'c'is lowercase 0 if not
 */
-
 int _islower(int c)
 {
 	if (islower(c))
