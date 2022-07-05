@@ -1,13 +1,13 @@
 #include <ctype.h>
 /**
- * main - entry point
  * _islower - checks if c is lowercase or uppercasae
- * return: 0
+ * int c - is vriable to be checked
+ * return - 1 if lower 0 if not lower
 */
+
 int _islower(int c)
 {
-	int ret;
-
-	ret = islower(c);
-	return ret;	
+	if (islower(c))
+		return (1);
+	return (0);
 }
