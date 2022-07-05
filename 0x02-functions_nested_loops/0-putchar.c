@@ -9,6 +9,6 @@
 */
 int main(void)
 {
-	print();
+	printf("_putcahr\n");
 	return (0);
 }
