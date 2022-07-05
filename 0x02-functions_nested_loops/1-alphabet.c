@@ -1,4 +1,4 @@
-#include "1-main.h"
+#include "main.h"
 /**
  * main - entry point
  * description: uses print alphabetfunction to print alphabet
