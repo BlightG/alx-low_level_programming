@@ -2,22 +2,22 @@
 
 /**
  * main - entry point
- * print_alphabet - void function returns 0
+ * print_alphabet - prints alphabet
  * description: uses print alphabetfunction to print alphabet
  * return: 0
 */
-void print_alphabet(void);
+void print_alphabet(void)
 {
-	int A = 'a';
+	char A = 'a';
 
 	for (; A <= 'z' ; A++)
 	{
 		putchar(A);
 	}
+	putchar('\n');
 }
 int main(void)
 {
 	print_alphabet();
-	puthcar('\n');
 	return (0);
 }
