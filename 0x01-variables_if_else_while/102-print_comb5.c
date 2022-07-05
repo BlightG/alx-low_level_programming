@@ -9,30 +9,29 @@
 */
 int main(void)
 {
-int A, B, C, D;
+	int firstDigit = 0, seconDigit;
 
-	for (A = 0; A <= 9; A++)
+	while (firstDigit <= 99)
 	{
-		for (B = 0; B <= 9; B++)
+		seconDigit = firstDigit;
+		while (seconDigit <= 99)
 		{
-			for (C = 0; C <= 9; C++)
+			if (seconDigit != firstDigit)
 			{
-				for (D = 0; D <= 9; D++)
+				putchar((firstDigit / 10) + 48);
+				putchar((firstDigit % 10) + 48);
+				putchar(' ');
+				putchar((seconDigit / 10) + 48);
+				putchar((seconDigit % 10) + 48);
+				if (firstDigit != 98 || seconDigit != 99)
 				{
-					if (A == 0 && B == 0 && C == 0 && D == 0)
-					{
-						D = D + 1;   
-					}
-					putchar(A + 48);
-					putchar(B + 48);
-					putchar(' ');
-					putchar(C + 48);
-					putchar(D + 48);
 					putchar(',');
 					putchar(' ');
 				}
 			}
+			++seconDigit;
 		}
+		++firstDigit;
 	}
 	putchar('\n');
 	return (0);
