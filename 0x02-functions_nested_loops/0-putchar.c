@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h" 
 /**
  * main - entry point
  *
@@ -9,6 +9,6 @@
 */
 int main(void)
 {
-	printf("_putcahr\n");
+	printf("_putchar\n");
 	return (0);
 }
