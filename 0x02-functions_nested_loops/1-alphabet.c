@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * main - entry point
+ * print_alphabet - prints letters from a to z prtotyped in function main
  * description: uses print_alphabet function to print alphabet alphabet
- * return: void 
+ * return: void
 */
 void print_alphabet(void)
 {
