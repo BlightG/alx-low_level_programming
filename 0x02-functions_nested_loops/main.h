@@ -1,3 +1,5 @@
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdio.h>
 /**
  * main - entry function
@@ -13,3 +15,4 @@ int _abs(int j);
 int print_last_digit(int b);
 void jack_bauer(void);
 void times_table(void);
+#endif
