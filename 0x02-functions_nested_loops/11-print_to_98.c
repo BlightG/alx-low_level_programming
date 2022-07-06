@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_to_98 - prints from n to 98
  * n: signed integer
@@ -6,29 +7,34 @@
 */
 void print_to_98(signed int n)
 {
-	if (n <= 98)
+	signed int no;
+
+	no = n;
+	if (no < 98)
 	{	
-		for (; n <= 98 ; n++)
+		for (; no <= 98 ; no++)
 		{
-			printf("%d",n);
-			if (n != 98)
+			printf("%d", no);
+			if (no != 98)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
 		}
 	}
-	if (n >= 98)
+	else if (no > 98)
 	{
-		for (; n >= 98 ; n--)
+		for (; no >= 98 ; no--)
 		{
-			printf("%d",n);
-			if (n != 98)
+			printf("%d", no);
+			if (no != 98)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
 		}
 	}
+	else 
+		printf("%d", no);
 	_putchar('\n');
 }
