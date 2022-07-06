@@ -23,7 +23,8 @@ void times_table(void)
 				_putchar(' ');
 				_putchar(timetable + '0');
 			}
-			_putchar(',');
+			if (secondNo != 9)
+				_putchar(',');
 			_putchar(' ');
 		}
 		_putchar('\n');
