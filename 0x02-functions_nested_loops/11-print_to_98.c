@@ -36,5 +36,5 @@ void print_to_98(signed int n)
 	}
 	else 
 		printf("%d", no);
-	_putchar('\n');
+	printf("\n");
 }
