@@ -13,8 +13,16 @@ void times_table(void)
 		for (secondNo = 0; secondNo <= 9 ; secondNo++)
 		{
 			timetable = firstNo * secondNo;
-			_putchar((timetable / 10) + 48);
-			_putchar((timetable % 10) + 48);
+			if (timetable > 10)
+			{
+				_putchar((timetable / 10) + '0');
+				_putchar((timetable % 10) + '0');
+			}
+			else
+			{
+				_putchar(' ');
+				_putchar(timetable + '0');
+			}
 			_putchar(',');
 			_putchar(' ');
 		}
