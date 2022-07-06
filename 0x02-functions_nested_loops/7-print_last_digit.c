@@ -12,6 +12,6 @@ int print_last_digit(int b)
 
 	retP = abs(b);
 	ret = retP % 10;
-	_putchar(48 + ret);
+	_putchar('0' + ret);
 	return (ret);
 }
