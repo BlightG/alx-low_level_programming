@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_to_98 - prints from n to 98
- * n: signed integer
+ * @n: signed integer
  * REturn: void
 */
 void print_to_98(signed int n)
@@ -11,7 +11,7 @@ void print_to_98(signed int n)
 
 	no = n;
 	if (no < 98)
-	{	
+	{
 		for (; no <= 98 ; no++)
 		{
 			printf("%d", no);
@@ -34,7 +34,7 @@ void print_to_98(signed int n)
 			}
 		}
 	}
-	else 
+	else
 		printf("%d", no);
 	printf("\n");
 }
