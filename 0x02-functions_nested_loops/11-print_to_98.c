@@ -1,18 +1,34 @@
 #include "main.h"
-/*
- *
- *
+/**
+ * print_to_98 - prints from n to 98
+ * n: signed integer
+ * REturn: void
 */
-void print_to_98(int n)
+void print_to_98(signed int n)
 {
-	for (; n <= 98 ; n++)
-	{
-		printf("%d",n);
-		if (n != 98)
+	if (n <= 98)
+	{	
+		for (; n <= 98 ; n++)
 		{
-			_putchar(',');
-			_putchar(' ');
+			printf("%d",n);
+			if (n != 98)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 	}
-	_putchar ('\n');
+	if (n >= 98)
+	{
+		for (; n >= 98 ; n--)
+		{
+			printf("%d",n);
+			if (n != 98)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+		}
+	}
+	_putchar('\n');
 }
