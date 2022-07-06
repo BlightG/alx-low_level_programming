@@ -17,8 +17,8 @@ void print_to_98(signed int n)
 			printf("%d", no);
 			if (no != 98)
 			{
-				_putchar(',');
-				_putchar(' ');
+				printf(",");
+				printf("");
 			}
 		}
 	}
@@ -29,8 +29,8 @@ void print_to_98(signed int n)
 			printf("%d", no);
 			if (no != 98)
 			{
-				_putchar(',');
-				_putchar(' ');
+				printf(",");
+				printf("");
 			}
 		}
 	}
