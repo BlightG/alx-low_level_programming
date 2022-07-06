@@ -6,26 +6,21 @@
 */
 void times_table(void)
 {
-	int firstNo, secondNo, timetable;
+	int num, mult, prod;
 
-	for (firstNo = 0; firstNo <= 9 ; firstNo++)
+	for (num = 0; num <= 9; ++num)
 	{
-		for (secondNo = 0; secondNo <= 9 ; secondNo++)
+		_putchar(48);
+		for (mult = 1; mult <= 9; ++mult)
 		{
-			timetable = firstNo * secondNo;
-			if (timetable >= 10)
-			{
-				_putchar((timetable / 10) + '0');
-				_putchar((timetable % 10) + '0');
-			}
-			else
-			{
-				_putchar(32);
-				_putchar(timetable + '0');
-			}
-			if (secondNo != 9)
-				_putchar(',');
+			_putchar(',');
 			_putchar(' ');
+			prod = num * mult;
+			if (prod <= 9)
+				_putchar(' ');
+			else
+				_putchar((prod / 10) + 48);
+			_putchar((prod % 10) + 48);
 		}
 		_putchar('\n');
 	}
