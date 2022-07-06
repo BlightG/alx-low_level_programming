@@ -20,7 +20,7 @@ void times_table(void)
 			}
 			else
 			{
-				_putchar(' ');
+				_putchar(32);
 				_putchar(timetable + '0');
 			}
 			if (secondNo != 9)
