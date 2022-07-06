@@ -18,7 +18,7 @@ void print_to_98(signed int n)
 			if (no != 98)
 			{
 				printf(",");
-				printf("");
+				printf(" ");
 			}
 		}
 	}
@@ -30,7 +30,7 @@ void print_to_98(signed int n)
 			if (no != 98)
 			{
 				printf(",");
-				printf("");
+				printf(" ");
 			}
 		}
 	}
