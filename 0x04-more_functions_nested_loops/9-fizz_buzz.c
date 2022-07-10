@@ -1,0 +1,23 @@
+#include "main.h"
+/**
+ * main - entry point for program
+ * Descripiotn: FizzBuzz printing:
+ * Return: 0 if sucesseful
+*/
+int main(void)
+{
+	int a;
+
+	for (a = 0 ; a < 100 ; a++)
+	{
+		printf("%d", a);
+		if (a % 3 == 0)
+			printf("Fizz");
+		else if (a % 5 == 0)
+			printf("Buzz");
+		else if (a % 3 == 0 && a % 5 == 0)
+			printf("FizzBuzz");
+		_putchar('\n');
+	}
+	return (0);
+}
