@@ -4,4 +4,5 @@
 #include <ctype.h>
 int _isupper(int c);
 int _isdigit(int d);
+int mul(int a, int b);
 #endif
