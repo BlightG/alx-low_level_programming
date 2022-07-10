@@ -1,12 +1,11 @@
 #include "main.h"
 /**
- *
- *
- *
+ * print_line - prints an arrow
+ * @n: number
 */
 void print_line(int n)
 {
-	int a; 
+	int a;
 
 	if (n > 0)
 	{
@@ -16,6 +15,6 @@ void print_line(int n)
 		}
 		_putchar('\n');
 	}
-	else 
+	else
 		_putchar('\n');
 }
