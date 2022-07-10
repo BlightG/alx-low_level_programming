@@ -1,5 +1,4 @@
 #include "main.h"
-#include <ctype.h>
 /**
  * _isupper - checkes if a function is upper case or not
  * @c: variable
@@ -8,10 +7,8 @@
 
 int _isupper(int c)
 {
-	int A;
-
-	A = isupper(c);
-	if (A != 0)
-		A = 1;
-	return (A);
+	if (c >= 65 && c <= 90)
+		return (1);
+	else
+		return (0);
 }
