@@ -2,7 +2,7 @@
 /**
  * _puts - prints string to standard output
  * @str: string inpit for function
- * Return: 0 if sucsess; 
+ * Return: 0 if sucsess;
 */
 void _puts(char *str)
 {
