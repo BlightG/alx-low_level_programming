@@ -1,11 +1,12 @@
 #include "main.h"
 /**
- * _strcat - appendes string src to the end of dest upto nth char
+ * _strncat - appendes string src to the end of dest upto nth char
  * @dest: first  string
  * @src: secondstring
+ * @n: stoping condition variable
  * Return: the total string value
 */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	int j, k;
 
