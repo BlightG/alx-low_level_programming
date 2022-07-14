@@ -22,6 +22,5 @@ char *_strcat(char *dest, char *src)
 		m++;
 	}
 	dest[l + 1] = '\0';
-	_putchar('\n');
 	return (dest);
 }
