@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * _strpbrk- does similar work as strpbrk
  *
@@ -10,25 +10,20 @@
 */
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j, f;
+	int i, j;
 
 	i = 0;
 	while (s[i] != '\0')
 	{
 		j = 0;
-		f = 1;
 		while (accept[j] != '\0')
 		{
 			if (s[i] == accept[j])
-			{
-				f = 0;
-				break;
-			}
+				return (s + i);
+		
 			j++;
 		}
-		if (f != 1)
-			break;
 		i++;
 	}
-	return (&s[i]);
+	return ('\0');
 }
