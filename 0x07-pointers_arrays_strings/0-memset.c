@@ -1,9 +1,13 @@
 #include "main.h"
 
 /**
+ * _memset - prints char b to array s
  *
+ * @s: array to be changed
+ * @n: change until this point
+ * @b: substitute this character
  *
- *
+ * Return: s
 */
 char *_memset(char *s, char b, unsigned int n)
 {
