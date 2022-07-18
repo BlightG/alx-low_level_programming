@@ -8,17 +8,11 @@
  *     */
 int main(void)
 {
-	char *s = "hemmo";
-	char *f;
+	char *s = "hello, world";
+	char *f = "oleh";
+	unsigned int n;
 
-	f = _strchr(s, 'h');
-	if (f != NULL)
-	{
-		printf("%s\n", f);
-	}
-	else
-	{
-		printf("NULL");
-	}
+	n = _strspn(s, f);
+	printf("%u\n", n);
 	return (0);
 }
