@@ -1,28 +1,34 @@
 #include "main.h"
 
 /**
- * _strchr - searces for character c in array s
+ * _strspn- searces for character c in array s
  *
  * @s: array to be searched
- * @c: character to be searched
+ * @accept: character to be searched
  *
  * Return: NULL if no character found or adress if found
 */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i;
+	int i, j, f;
 
 	i = 0;
-	while (*s != *accept && *s != '\0')
-	{	
-		s++;
-		i++;	
-	}
-	if (i)
+	while (s[i] != '\0')
 	{
+		j = 0;
+		f = 1; /*flag status*/
+		while (accept[j] != '\0')
+		{
+			if (s[i] == accept[j])
+			{
+				f = 0; /*success*/
+				break;
+			}
+			j++;
+		}
+		if (f == 1)
+			break;
 		i++;
-		return (i);
 	}
-	else
-		return (0);
+	return (i);
 }
