@@ -3,7 +3,7 @@
 * str_concat - conactasts string s1 & s2
 * @s1: string 1
 * @s2: string 2
-* Return: null if k is null or pointer if not 
+* Return: null if k is null or pointer if not
 */
 char *str_concat(char *s1, char *s2)
 {
@@ -25,16 +25,16 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
     /*return variables ot zero and use them to conacte values of  s1 & s2*/
 	a = b = 0;
-	while(s1[a] != '\0')
+	while (s1[a] != '\0')
 	{
 	k[a] = s1[a];
-	a++;        
+	a++;
 	}
-	while(s2[b] != '\0')
+	while (s2[b] != '\0')
 	{
 		k[a + b] = s2[b];
-		b++;        
+		b++;
 	}
-	k[i+j] = '\0';
+	k[i + j] = '\0';
 	return (k);
 }
