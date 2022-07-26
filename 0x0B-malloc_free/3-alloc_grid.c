@@ -12,9 +12,9 @@ if (width <= 0)
     return (NULL);
 else if (height <= 0)
     return (NULL);
-j = malloc(width * sizeof(int*));
-for (i = 0; i < width; i++)
-    j[i] = (int*)malloc(height * sizeof(int));
+j = malloc(height * sizeof(int*));
+for (i = 0; i < height; i++)
+    j[i] = (int*)malloc(width * sizeof(int));
 if (j == NULL)
     return (NULL);
 return (j);
