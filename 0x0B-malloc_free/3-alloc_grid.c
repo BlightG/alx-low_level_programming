@@ -26,7 +26,7 @@ for (i = 0; i < height; i++)
 		free(j);
 		return (NULL);
 	}
-	for (j = 0; k < width; j++)
+	for (k = 0; k < width; k++)
 		j[i][k] = 0;   
     }
 return (j);
