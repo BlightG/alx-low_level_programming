@@ -17,8 +17,12 @@ char *create_array(unsigned int size, char c)
 	{
 		*(ptr + i) = c;
 	}
-	if (size == 0)
+	if (size == NULL)
+	{
+		Printf("cant allocated memory")
 		return (NULL);
+	
+	}
 	else
 		return (ptr);
 }
