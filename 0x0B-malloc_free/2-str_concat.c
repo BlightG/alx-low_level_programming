@@ -1,7 +1,9 @@
 #include "main.h"
 /**
-*
-*
+* str_concat - conactasts string s1 & s2
+* @s1: string 1
+* @s2: string 2
+* Return: null if k is null or pointer if not 
 */
 char *str_concat(char *s1, char *s2)
 {
