@@ -18,7 +18,7 @@ char *str_concat(char *s1, char *s2)
         ;
     for (j = 0 ; s2[j] != '\0' ; j++)
         ;
-    k = malloc((i + j + 1) * sizeof(char));
+    k = malloc((i * sizeof(char)) + ((j + 1) * sizeof(char)));
     if (k == NULL)
         return (NULL);
     /*return variables ot zero and use them to conacte values of  s1 & s2*/
