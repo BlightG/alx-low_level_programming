@@ -16,11 +16,11 @@ j = malloc(height * sizeof(int*));
 for (i = 0; i < height; i++)
     {
         j[i] = (int*)malloc(width * sizeof(int));
-    if (j[i] == NULL)
+        if (j[i] == NULL)
 	{
 		while (i >= 0)
 		{
-			free((j[i]);
+			free((j[i]));
 			i--;
 		}
 		free(j);
