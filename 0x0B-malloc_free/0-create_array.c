@@ -13,15 +13,15 @@ char *create_array(unsigned int size, char c)
 	char *ptr;
 
 	ptr = (char *) malloc(sizeof(char) * size);
+	if (ptr = NULL)
+		return (NULL);
 	for (i = 0 ; i < size; i++)
 	{
 		*(ptr + i) = c;
 	}
 	if (size == 0)
 	{
-		printf("cant allocated memory");
 		return (NULL);
-	
 	}
 	else
 		return (ptr);
