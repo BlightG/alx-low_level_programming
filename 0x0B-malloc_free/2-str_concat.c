@@ -23,15 +23,15 @@ char *str_concat(char *s1, char *s2)
         return (NULL);
     /*return variables ot zero and use them to conacte values of  s1 & s2*/
     a = b = 0;
-    while(s1[i] != '\0')
+    while(s1[a] != '\0')
     {
-        k[i] = s1[i];
-        i++;        
+        k[a] = s1[a];
+        a++;        
     }
-    while(s2[j] != '\0')
+    while(s2[b] != '\0')
     {
-        k[i + j] = s2[j];
-        j++;        
+        k[a + b] = s2[b];
+        b++;        
     }
     k[i+j] = '\0';
     return (k);
