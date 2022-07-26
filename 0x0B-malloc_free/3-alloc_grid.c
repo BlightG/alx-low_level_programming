@@ -27,7 +27,7 @@ for (i = 0; i < height; i++)
 		return (NULL);
 	}
 	for (j = 0; k < width; j++)
-		grid[i][k] = 0;   
+		j[i][k] = 0;   
     }
 return (j);
 }
