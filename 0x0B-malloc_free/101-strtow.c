@@ -15,21 +15,21 @@ if (str == NULL)
 /*read indiviual word*/
 for (i = 0 ; str[i] != '\0' ; i++) /*reads position on string*/
 {
-    for (j = 0; str[i + j] != ' ' ; j++) /*counts length of word*/
+    for (j = 0; str[i + j] != ' ' ; j++) /*checks if positions has a word*/
         ;
     if (str[i] != ' ')/*uses word count to intialize rows*/
         wordcount++;
 }
-if (i == 0)
+if (i == 0) /*checks for ""*/
     return (NULL);
-if (wordcount == 0)
+if (wordcount == 0) /*checks for " "*/
     return (NULL);
-word = malloc(
-    (wordcount + 1) * sizeof(char *));
+printf("%d", wordcount);
+word = malloc((wordcount + 1) * sizeof(char *));
 for (i = 0 ; str[i] != '\0' ; i++) 
 {
     wordlength = 0;
-    while (str[i + j] != ' ') 
+    while (str[i + j] != ' ')
     {
         j++;
         wordlength++;
