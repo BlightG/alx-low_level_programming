@@ -6,7 +6,7 @@
 */
 char **strtow(char *str)
 {
-int i, j, wordprint, wordlength, wordcount, row, column;
+int i, wordprint, wordlength, wordcount, row, column;
 char **word;
 
 row = column = wordcount = 0;
