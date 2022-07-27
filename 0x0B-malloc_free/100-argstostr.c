@@ -1,4 +1,4 @@
-#inculde "main.h"
+#include "main.h"
 /**
 * argstostr - returns a pointer conacting program arguments
 *
