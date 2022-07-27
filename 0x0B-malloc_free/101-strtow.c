@@ -36,12 +36,12 @@ for (i = 0 ; str[i] != '\0' ; i++)
     if (wordlength > 0) /*if there is a word intalize space and copy word*/
     {
         /*intializes colums for each row*/
-        word[row] = malloc((wordlength + 1) * sizeof(int));
+        word[row] = malloc((wordlength + 1) * sizeof(char));
         column = 0;
         /*prints each wors on newly inzialized column*/
         for (wordprint = 0 ; wordprint < wordlength ; wordprint++)
         { 
-            word[row][column] = str[i + wordprint];
+            word[row][column] = str[(i - wordlength) + wordprint];
             column++;
         }
         word[row][column] = '\0';
