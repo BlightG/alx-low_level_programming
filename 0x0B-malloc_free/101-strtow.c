@@ -47,7 +47,6 @@ for (i = 0 ; str[i] != '\0' ; i++)
         word[row][column] = '\0';
         row++;
     }
-    j = 0;
 }
 if (word == NULL)
     return (NULL);
