@@ -6,7 +6,7 @@
 */
 char **strtow(char *str)
 {
-int i, j, k, wordprint, wordlength, wordcount, row, column;
+int i, j, wordprint, wordlength, wordcount, row, column;
 char **word;
 
 row = column = wordcount = 0;
@@ -29,7 +29,7 @@ for (i = 0 ; str[i] != '\0' ; i++)
     if (wordlength > 0) /*if there is a word intalize space and copy word*/
     {
         /*intializes colums for each row*/
-        word[row] = (int *)malloc(wordlength * sizeof(int));
+        word[row] = malloc(wordlength * sizeof(int));
         column = 0;
         /*prints each wors on newly inzialized column*/
         for (wordprint = 0 ; wordprint < wordlength ; wordprint++)
