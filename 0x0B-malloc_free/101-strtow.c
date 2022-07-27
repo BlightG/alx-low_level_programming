@@ -10,7 +10,7 @@ int i, j, wordprint, wordlength, wordcount, row, column;
 char **word;
 
 row = column = wordcount = 0;
-if (str == NULL || str == '')
+if (str == NULL || *str == '')
     return (NULL);
 /*read indiviual word*/
 for (i = 0 ; str[i] != '\0' ; i++) /*reads position on string*/
