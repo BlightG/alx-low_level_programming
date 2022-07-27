@@ -15,7 +15,7 @@ if (str == NULL)
 /*read indiviual word*/
 for (i = 0 ; str[i] != '\0' ; i++) /*reads position on string*/
 {
-    for (j = 0; str[j] != ' ' ; j++) /*counts length of word*/
+    for (j = 0; str[i + j] != ' ' ; j++) /*counts length of word*/
         ;
     if (str[i] != ' ')/*uses word count to intialize rows*/
         wordcount++;
@@ -24,7 +24,7 @@ word = malloc((wordcount + 1) * sizeof(char *));
 for (i = 0 ; str[i] != '\0' ; i++) 
 {
     wordlength = 0;
-    while (str[j] != ' ') 
+    while (str[i + j] != ' ') 
     {
         j++;
         wordlength++;
