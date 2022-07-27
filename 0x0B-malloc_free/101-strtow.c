@@ -9,7 +9,7 @@ char **strtow(char *str)
 int i, wordprint, wordlength, wordcount, row, column;
 char **word;
 
-column = wordcount = 0;
+wordcount = 0;
 if (str == NULL)
     return (NULL);
 /*read indiviual word*/
@@ -25,6 +25,7 @@ for (i = 0 ; str[i] != '\0' ; i++) /*reads position on string*/
 if (wordcount == 0) /*checks for " "*/
     return (NULL);
 word = malloc((wordcount + 1) * sizeof(char *));
+column = 0;
 for (i = 0 ; str[i] != '\0' ; i++) 
 {
     wordlength = 0;
@@ -34,7 +35,6 @@ for (i = 0 ; str[i] != '\0' ; i++)
             wordlength++;
         /*intializes colums for each row*/
         word[column] = (char *) malloc((wordlength + 1) * sizeof(char));
-        column = 0;
         /*prints each words on newly inzialized column*/
         for (wordprint = 0 ; wordprint < wordlength ; wordprint++)
         { 
