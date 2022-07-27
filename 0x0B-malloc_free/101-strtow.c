@@ -10,7 +10,7 @@ int i, j, k, wordprint, wordlength, wordcount, row, column;
 char **word;
 
 row = column = wordcount = 0;
-if (str == NULL || *str == "")
+if (str == NULL || **str == "")
     return (NULL);
 /*read indiviual word*/
 for (i = 0 ; str[i] != '\0' ; i++) /*reads position on string*/
@@ -23,7 +23,7 @@ for (i = 0 ; str[i] != '\0' ; i++) /*reads position on string*/
 word = malloc(wordcount * sizeof(char *));
 for (i = 0 ; str[i] != '\0' ; i++) 
 {
-    wordlength = 0
+    wordlength = 0;
     for (j = 0; *str[j] != " "; j++) 
         wordlength++;
     if (wordlength > 0) /*if there is a word intalize space and copy word*/
