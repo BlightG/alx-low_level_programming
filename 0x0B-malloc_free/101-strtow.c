@@ -32,9 +32,6 @@ for (i = 0 ; str[i] != '\0' ; i++)
     {
         for (; str[i] != ' ' ; i++)
             wordlength++;
-    }
-    if (wordlength > 0) /*if there is a word intalize space and copy word*/
-    {
         /*intializes colums for each row*/
         word[row] = malloc((wordlength + 1) * sizeof(char));
         column = 0;
