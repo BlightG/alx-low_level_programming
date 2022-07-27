@@ -15,13 +15,13 @@ if (str == NULL)
 /*read indiviual word*/
 for (i = 0 ; str[i] != '\0' ; i++) /*reads position on string*/
 {
-    for (j = 0; str[i + j] != ' ' ; j++) /*checks if positions has a word*/
-        ;
-    if (str[i] != ' ')/*uses word count to intialize rows*/
-        wordcount++;
+        if (str[i] != ' ')
+        {
+                for (; str[i] != ' ' ; i++) /*checks if positions has a word*/
+                        ;
+                wordcount++;/*uses word count to intialize rows*/
+        }
 }
-if (i == 0) /*checks for ""*/
-    return (NULL);
 if (wordcount == 0) /*checks for " "*/
     return (NULL);
 printf("%d", wordcount);
