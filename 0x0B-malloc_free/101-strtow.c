@@ -21,8 +21,11 @@ for (i = 0 ; str[i] != '\0' ; i++) /*reads position on string*/
         wordcount++;
 }
 if (i == 0)
-    return(NULL);
-word = malloc((wordcount + 1) * sizeof(char *));
+    return (NULL);
+if (wordcount == 0)
+    return (NULL);
+word = malloc(
+    (wordcount + 1) * sizeof(char *));
 for (i = 0 ; str[i] != '\0' ; i++) 
 {
     wordlength = 0;
