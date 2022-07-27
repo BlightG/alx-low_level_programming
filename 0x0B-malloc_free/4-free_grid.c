@@ -1,15 +1,15 @@
 #include "main.h"
-/*
+/**
 * free_grid - frees a 2d area with height of "height"
 *
-* @gird: 2d array
+* @grid: 2d array
 * @height: height of array
 */
 void free_grid(int **grid, int height)
 {
-int i;
+	int i;
 
-for (i = 0 ; i < height ; i++)
-    free (grid[i]);
-free (grid);
+	for (i = 0 ; i < height ; i++)
+		free(grid[i]);
+	free(grid);
 }
