@@ -1,7 +1,11 @@
 #include "main.h"
 /**
+* alloc_grid - allocates a 2d array of height and width
 *
-*
+* @width: width of 2d array
+* @height: height of 2d array
+*  
+* Return: a 2d array or null if both hetght and width are 0
 */
 int **alloc_grid(int width, int height)
 {
@@ -13,6 +17,8 @@ if (width <= 0)
 else if (height <= 0)
     return (NULL);
 j = malloc(height * sizeof(int*));
+if (j == NULL)
+    return (NULL);
 for (i = 0; i < height; i++)
     {
         j[i] = (int*)malloc(width * sizeof(int));
