@@ -20,7 +20,7 @@ for (i = 0 ; str[i] != '\0' ; i++) /*reads position on string*/
     if (str[i] != ' ')/*uses word count to intialize rows*/
         wordcount++;
 }
-word = malloc(wordcount * sizeof(char *));
+word = malloc((wordcount + 1) * sizeof(char *));
 for (i = 0 ; str[i] != '\0' ; i++) 
 {
     wordlength = 0;
@@ -29,7 +29,7 @@ for (i = 0 ; str[i] != '\0' ; i++)
     if (wordlength > 0) /*if there is a word intalize space and copy word*/
     {
         /*intializes colums for each row*/
-        word[row] = malloc(wordlength * sizeof(int));
+        word[row] = malloc((wordlength + 1) * sizeof(int));
         column = 0;
         /*prints each wors on newly inzialized column*/
         for (wordprint = 0 ; wordprint < wordlength ; wordprint++)
