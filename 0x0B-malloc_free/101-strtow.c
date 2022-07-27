@@ -36,7 +36,7 @@ for (i = 0 ; str[i] != '\0' ; i++)
         /*intializes colums for each row*/
         word[column] = (char *) malloc((wordlength + 1) * sizeof(char));
         /*prints each words on newly inzialized column*/
-        for (wordprint = 0 ; wordprint < wordlength ; wordprint++)
+        for (wordprint = 0 ; wordprint =< wordlength ; wordprint++)
         { 
             word[column][row] = str[(i - wordlength) + wordprint];
             row++;
