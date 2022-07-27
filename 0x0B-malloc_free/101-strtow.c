@@ -24,8 +24,11 @@ word = malloc((wordcount + 1) * sizeof(char *));
 for (i = 0 ; str[i] != '\0' ; i++) 
 {
     wordlength = 0;
-    for (j = 0; str[j] != ' '; j++) 
+    while (str[j] != ' ') 
+    {
+        j++;
         wordlength++;
+    }
     if (wordlength > 0) /*if there is a word intalize space and copy word*/
     {
         /*intializes colums for each row*/
@@ -40,6 +43,7 @@ for (i = 0 ; str[i] != '\0' ; i++)
         word[row][column] = '\0';
         row++;
     }
+    j = 0;
 }
 if (word == NULL)
     return (NULL);
