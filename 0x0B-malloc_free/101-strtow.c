@@ -15,16 +15,16 @@ if (str == NULL || **str == "")
 /*read indiviual word*/
 for (i = 0 ; str[i] != '\0' ; i++) /*reads position on string*/
 {
-    for (j = 0; *str[j] != " "; j++) /*counts length of word*/
+    for (j = 0; str[j] != ' ' ; j++) /*counts length of word*/
         ;
-    if (*str[i] != " ")/*uses word count to intialize rows*/
+    if (str[i] != ' ')/*uses word count to intialize rows*/
         wordcount++;
 }
 word = malloc(wordcount * sizeof(char *));
 for (i = 0 ; str[i] != '\0' ; i++) 
 {
     wordlength = 0;
-    for (j = 0; *str[j] != " "; j++) 
+    for (j = 0; str[j] != ' '; j++) 
         wordlength++;
     if (wordlength > 0) /*if there is a word intalize space and copy word*/
     {
