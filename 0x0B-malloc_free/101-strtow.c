@@ -34,6 +34,16 @@ for (i = 0 ; str[i] != '\0' ; i++)
             wordlength++;
         /*intializes colums for each row*/
         word[column] = (char *) malloc((wordlength + 1) * sizeof(char));
+        if (word[column] == NULL)
+		{
+			while (column >= 0)
+			{
+				free((word[column]));
+				column--;
+			}
+			free(word);
+			return (NULL);
+		}
         column = 0;
         /*prints each words on newly inzialized column*/
         for (wordprint = 0 ; wordprint < wordlength ; wordprint++)
