@@ -20,6 +20,8 @@ for (i = 0 ; str[i] != '\0' ; i++) /*reads position on string*/
     if (str[i] != ' ')/*uses word count to intialize rows*/
         wordcount++;
 }
+if (i == 0
+    return(NULL);
 word = malloc((wordcount + 1) * sizeof(char *));
 for (i = 0 ; str[i] != '\0' ; i++) 
 {
