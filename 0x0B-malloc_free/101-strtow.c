@@ -24,15 +24,14 @@ for (i = 0 ; str[i] != '\0' ; i++) /*reads position on string*/
 }
 if (wordcount == 0) /*checks for " "*/
     return (NULL);
-printf("%d", wordcount);
 word = malloc((wordcount + 1) * sizeof(char *));
 for (i = 0 ; str[i] != '\0' ; i++) 
 {
     wordlength = 0;
-    while (str[i + j] != ' ')
+    if (str[i] != ' ')
     {
-        j++;
-        wordlength++;
+        for (; str[i] != ' ' ; i++)
+            wordlength++;
     }
     if (wordlength > 0) /*if there is a word intalize space and copy word*/
     {
