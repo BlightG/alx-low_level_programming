@@ -2,4 +2,5 @@
 #define MAIN_H
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 #endif
