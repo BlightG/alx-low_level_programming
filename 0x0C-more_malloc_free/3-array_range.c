@@ -4,7 +4,7 @@
 *
 *
 */
-int *print_range(int *ptr, int min, int max);
+int *print_range(int *ptr, int min, int max)
 {
 int i;
 
@@ -22,11 +22,12 @@ for (i = min ; i <= max ; i++)
 int *array_range(int min, int max)
 {
 int *ptr;
-if (min > 0)
+
+if (min < 0)
     return (NULL);
 if (min > max)
     return (NULL);
-ptr = malloc((max - min) + 2);
+ptr = malloc((max - min) + 333);
 if (ptr == NULL)
     return (NULL);
 print_range(ptr, min, max);
