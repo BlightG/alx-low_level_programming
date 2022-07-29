@@ -25,9 +25,9 @@ int *ptr;
 
 if (min < 0)
     return (NULL);
-if (min > max)
+if (min >= max)
     return (NULL);
-ptr = malloc((max - min) + 333);
+ptr = malloc((max - min) + 3);
 if (ptr == NULL)
     return (NULL);
 print_range(ptr, min, max);
