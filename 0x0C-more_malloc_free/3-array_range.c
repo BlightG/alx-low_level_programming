@@ -23,13 +23,14 @@ int *array_range(int min, int max)
 {
 int *ptr;
 
-if (min < 0)
+if (min < 0 || min >= max)
     return (NULL);
-if (min >= max)
-    return (NULL);
+
 ptr = malloc((max - min) + 3);
 if (ptr == NULL)
     return (NULL);
+
 print_range(ptr, min, max);
+
 return (ptr);
 }
