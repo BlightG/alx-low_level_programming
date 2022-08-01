@@ -6,15 +6,13 @@
 */
 int *print_range(int *ptr, int min, int max)
 {
-int i, j;
+int i;
 
-j = max - min;
-for (i = 0; i < j || min <= max ; i++)
+for (i = 0; min <= max ; i++)
 {
     ptr[i] = min;
     min++;
 }
-    ptr[i] = '\0';
 	return (ptr);
 }
 /**
@@ -29,7 +27,7 @@ int *ptr;
 if (min >= max || min < 0)
     return (NULL);
 j = max - min;
-ptr = malloc((j + 2) * sizeof (int));
+ptr = malloc((j + 1) * sizeof (int));
 if (ptr == NULL)
     return (NULL);
 
