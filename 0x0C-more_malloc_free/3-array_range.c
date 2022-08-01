@@ -6,14 +6,16 @@
 */
 int *print_range(int *ptr, int min, int max)
 {
-int i;
+int i, j;
 
-for (i = min ; i <= max ; i++)
+j = max - min;
+for (i = 0; i < j || min <= max ; i++)
 {
-    ptr[i] = i;
+    ptr[i] = min;
+    min++;
 }
     ptr[i] = '\0';
-    return (ptr);
+	return (ptr);
 }
 /**
 *
@@ -21,12 +23,13 @@ for (i = min ; i <= max ; i++)
 */
 int *array_range(int min, int max)
 {
+int j;
 int *ptr;
 
-if (min >= max)
+if (min >= max || min < 0)
     return (NULL);
-
-ptr = malloc((max - min) + 3);
+j = max - min;
+ptr = malloc((j + 2) * sizeof (int));
 if (ptr == NULL)
     return (NULL);
 
