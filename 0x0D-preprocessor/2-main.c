@@ -4,7 +4,7 @@
 *
 * Descrtption: return source file name.
 *
-* Return: always returns 0 if sucess.
+* Return: Always returns 0 if sucess.
 */
 int main(void)
 {
