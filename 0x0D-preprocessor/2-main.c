@@ -1,13 +1,13 @@
 #include <stdio.h>
-/*
-* main - entry point of function
-*
-* Descrtption: return source file name.
-*
-* Return: always returns 0 if sucess.
+#include <string.h>
+/**
+ * main - Entry point
+ *
+ * Description: prints name of soucre file
+ * Return: Always 0 if sucess
 */
 int main(void)
 {
-    printf("%s\n", _FILE_);
-    return (0);
+	printf("%s\n", __FILE__);
+	return (0);
 }
