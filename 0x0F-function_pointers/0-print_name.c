@@ -1,4 +1,3 @@
-#include "function_pointers.h"
 /**
 * print_name - prints name using the specified function
 *
