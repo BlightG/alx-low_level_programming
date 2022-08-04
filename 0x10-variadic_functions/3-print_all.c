@@ -7,8 +7,7 @@
 void print_all(const char * const format, ...)
 {
     va_list arg;
-    const int n;
-    int j , integer;
+    int n, j , integer;
     char character;
     char* string;
     float floating;
@@ -18,23 +17,23 @@ void print_all(const char * const format, ...)
     j = 0;
     while (j < n)
     {
-        if (format[j] == 'i', format[j] == 'c', format[j] == 'f', format[j] == 's')
+        if (format[j] == 'i' || format[j] == 'c' || format[j] == 'f' ||format[j] == 's')
         {
             switch (format[j])
             {
-                case i:
+                case 'i':
                     integer = va_arg(arg,int);
                     printf("%d", integer);
                     break;
-                case c:
+                case 'c':
                     character = va_arg(arg, char);
                     printf("%f", floating);
                     break;
-                case f:
-                    floating = va_arg(arg, float)
+                case 'f':
+                    floating = va_arg(arg, float);
                     printf("%f", floating);
                     break;
-                case s: 
+                case 's': 
                     string = va_arg(arg, char*);
                     printf("%s", string);
                     break;
