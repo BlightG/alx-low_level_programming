@@ -1,23 +1,25 @@
 #include "variadic_functions.h"
 /**
- * main - check the code
+ * print_numbers - prints variable int separatoed with separator
  *
- * Return: Always 0.
+ * @separator: separates the printed int
+ * @n: count of variable funciton
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-    va_list arg;
-    unsigned int i;
-    int j;
-    
-    va_start (arg, n);
-    
-    for(i = 0 ; i < n ; i++)
-    {
-        j = va_arg(arg, int);
-        printf("%d\n", j);
-        if (separator != NULL)
-            printf("%s\n", separator); 
-    }
-    va_end (arg);
+	va_list arg;
+	unsigned int i;
+	int j;
+
+	va_start(arg, n);
+
+	for (i = 0 ; i < n ; i++)
+	{
+		j = va_arg(arg, int);
+		printf("%d", j);
+		if (separator != NULL)
+			printf("%s", separator);
+	}
+	printf("\n");
+	va_end(arg);
 }
