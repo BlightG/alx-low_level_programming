@@ -24,7 +24,4 @@ int main(int argc, char *argv[])
     printf("num1 is %d\n", num1);
     printf("num2 is %d\n", num2);
     return(0);
-
-
-
 }
