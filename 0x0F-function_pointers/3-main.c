@@ -3,19 +3,20 @@
 *
 *
 */
-int main(int arc, char *argv[])
+int main(int argc, char *argv[])
 {
     int num1, num2;
     char operator;
 
+    operator = *argv[2];
     if (argc != 4)
     {
         printf("argc is %d\n", argc);
         exit (98);
     }
-    else if (operator != (+ || - || * || / || %))
+    else if (operator != 43 || operator != 45 || operator != 42 || operator != 47 || operator != 37)
     {
-        printf("%s is an invalid operator");
+        printf("%c is an invalid operator", operator);
         exit (99);
     }
     num1 = atoi(argv[1]);
