@@ -70,6 +70,7 @@ void print_string(va_list arg)
 }
 
 /**
+<<<<<<< HEAD
  * print_all - a function that prints anything
  *
  * @format: A string of character representing
@@ -79,10 +80,16 @@ void print_string(va_list arg)
  *              int, float or char * is ignored
  *
  * Return: nothing
+=======
+* print_all - prints chracters with format specified in pointer
+*
+* @format: specifies the way to print
+>>>>>>> 6edfdcf61def672549f683b8a14567543da15fdb
 */
 
 void print_all(const char * const format, ...)
 {
+<<<<<<< HEAD
 	va_list ap;
 	int i = 0, j = 0;
 	char *separator = "";
@@ -118,3 +125,45 @@ void print_all(const char * const format, ...)
 
 	va_end(ap);
 }
+=======
+	va_list arg;
+	int n, j, integer;
+	char character;
+	char *string;
+	float floating;
+
+	n = strlen(format);
+	va_start(arg, format);
+	j = 0;
+	while (j < n)
+	{
+		if (format[j] == 'i' || format[j] == 'c' || format[j] == 'f' || format[j] == 's')
+		{
+			switch (format[j])
+			{
+				case 'i':
+					integer = va_arg(arg, int);
+					printf("%d", integer);
+					break;
+				case 'c':
+					character = va_arg(arg, int);
+					printf("%c", character);
+					break;
+				case 'f':
+					floating = va_arg(arg, double);
+					printf("%f", floating);
+					break;
+				case 's':
+					string = va_arg(arg, char*);
+					printf("%s", string);
+					break;
+			}
+			if (j != (n - 1))
+				printf(", ");
+		}
+		j++;
+	}
+	printf("\n");
+	va_end(arg);
+}
+>>>>>>> 6edfdcf61def672549f683b8a14567543da15fdb
