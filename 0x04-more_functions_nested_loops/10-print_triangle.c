@@ -7,22 +7,25 @@
 */
 void print_triangle(int size)
 {
+    int i, j, printsize;
 
-    if (size =< 0)
-        _putchar('\n');
-    for (i = 0 ; i < size ; i++)
+        if (size =< 0)
     {
-        newsize = i + 1;
-        for (j = 0 ; j < newsize; j++)
+        _putchar('\n');
+        exit (1);
+    }
+    for (i = 1 ; i <= size ; i++)/*prints size amount of lines*/
+    {
+        printsize = size - i;
+        for (j = 0 ; j < printsize; j++)
         {
             _putchar(' ');
         }
-        for (; newsize =< size; newsize++)
+        for (; printsize < size; printsize++)
         {
             _putchar('#');
         }
         _putchar('\n');
     }
-
-
+    _putchar('\n');
 }
