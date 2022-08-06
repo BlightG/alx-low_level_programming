@@ -5,8 +5,7 @@
 */
 void print_number(int n)
 {
-    int i, j, k;
-    float l;
+    int i, j, k, l;
 
     i = 1;
     k = 0;
@@ -19,7 +18,7 @@ void print_number(int n)
     for(j = 0; j < k ; j++)
     {
         i = i / 10;
-	l = n / i;
-	printf("%f\n", l);
+	    l = n / i;
+	    printf("%f\n", l);
     }
 }
