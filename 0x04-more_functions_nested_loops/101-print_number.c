@@ -17,7 +17,7 @@ void print_number(int n)
     for(j = 0; j < k ; k++)
     {
         i = i / 10;
-    _putchar( n / i);
+        _putchar( n / i);
     }
     _putchar('\n');
 }
