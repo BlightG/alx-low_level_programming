@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-    print_number(98);
+    print_number(90);
     _putchar('\n');
     return (0);
 }

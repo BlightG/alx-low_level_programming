@@ -15,8 +15,8 @@ void print_number(int n)
         l = n / i;
         i = i * 10;
         k++;
-    }while(l)
-    for(j = 0; j < k ; k++)
+    }while(l);
+    for(j = 0; j < k ; j++)
     {
         i = i / 10;
         _putchar( n / i);
