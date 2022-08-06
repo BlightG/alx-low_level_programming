@@ -1,8 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
+void print_number(int n);
 int _isupper(int c);
 int _isdigit(int d);
 int mul(int a, int b);
