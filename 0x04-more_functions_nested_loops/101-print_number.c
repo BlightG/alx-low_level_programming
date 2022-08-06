@@ -19,6 +19,7 @@ void print_number(int n)
     for(j = 0; j < k ; j++)
     {
         i = i / 10;
-        _putchar('n / i' + 48);
+	l = n / i;
+	printf("%f\n", l);
     }
 }
