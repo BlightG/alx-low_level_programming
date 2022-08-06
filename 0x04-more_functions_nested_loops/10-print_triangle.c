@@ -1,8 +1,8 @@
 #include "main.h"
 /**
+*print_triangle - prints a tianle with height size
 *
-*
-*
+*@size: size of the triangle
 *
 */
 void print_triangle(int size)
