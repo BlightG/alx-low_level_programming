@@ -6,14 +6,16 @@
 void print_number(int n)
 {
     int i, j, k;
+    float l;
 
     i = 1;
     k = 0;
-    while(n / i)
+    do
     {
+        l = n / i;
         i = i * 10;
         k++;
-    }
+    }while(l)
     for(j = 0; j < k ; k++)
     {
         i = i / 10;
