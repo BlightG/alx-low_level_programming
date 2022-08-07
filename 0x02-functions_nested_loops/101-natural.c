@@ -10,7 +10,7 @@ void printsum3_5(int val)
 {
         int i, sum;
 
-        for (i = 1 ; i < val ; i++)
+        for (i = 1 ; i < val ; ++i)
         {
             if (!(i % 3) || !(i % 5))
                 sum += i;
