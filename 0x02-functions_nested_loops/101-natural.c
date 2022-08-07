@@ -12,10 +12,8 @@ void printsum3_5(int val)
 
         for (i = 1 ; i < val ; i++)
         {
-            printf("i: %d\n", i);
             if (!(i % 3) || !(i % 5))
                 sum += i;
-            printf("sum at i: %d\n", sum);
         }
         printf("%d\n", sum);
 }
