@@ -1,29 +1,25 @@
-#include <stdlib.h>
-#include <stdio.h>
-/**
-* printsum3_5 - pritns sum of 3 and 5 multiples
-*
-* @val: value showing up to which number to compute
-*/
-void printsum3_5(int val);
-void printsum3_5(int val)
-{
-        int i, sum;
+#include"main.h"
 
-        for (i = 0 ; i < val ; ++i)
-        {
-            if (!(i % 3) || !(i % 5))
-                sum += i;
-        }
-        printf("%d\n", sum);
-}
 /**
-* main - program Entry Point
-*
-* Return: 0 Always succsess
+ * main - Entry point
+ *
+ * Description: computes the sum of all
+ *		the multiples of 3 or 5
+ *		below 1024 (excluded)
+ *
+ * Return: Always 0 (Success)
 */
+
 int main(void)
 {
-    printsum3_5(1024);
-    return(0);
+	int sum, num;
+
+	for (num = 0; num < 1024; ++num)
+	{
+		if ((num % 3 == 0) || (num % 5 == 0))
+			sum += num;
+	}
+	printf("%d\n", sum);
+
+	return (0);
 }
