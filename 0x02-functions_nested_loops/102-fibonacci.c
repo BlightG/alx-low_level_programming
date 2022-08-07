@@ -14,8 +14,10 @@ int main (void)
         fsumhold = fsum;/*fsh = 1, 1, 2, 3*/
         fsum = fsum + fsumprev; /*fs = 1, 2, 3, 5,*/
         fsumprev = fsumhold; /* fsp = 1, 1, 2*/
-        printf("%ld, ", fsum);
+        if (i != 50)
+            printf("%ld, ", fsum);
+        else
+            printf("%ld\n", fsum);
     }
-    printf("'\n");
     return(0);
 }
