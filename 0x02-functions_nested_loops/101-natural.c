@@ -8,16 +8,16 @@
 void printsum3_5(int val);
 void printsum3_5(int val)
 {
-    int i, sum;
-    if (val > 0 || val < 1024)
-    {
-        for (i = 1 ; i <= val ; i++)
+        int i, sum;
+
+        for (i = 1 ; i < val ; i++)
         {
+            printf("i: %d\n", i);
             if (!(i % 3) || !(i % 5))
                 sum += i;
+            printf("sum at i: %d\n", sum);
         }
-        printf("final sum: %d\n", sum);
-    }
+        printf("%d\n", sum);
 }
 /**
 * main - program Entry Point
@@ -26,6 +26,6 @@ void printsum3_5(int val)
 */
 int main(void)
 {
-    printsum3_5(12);
+    printsum3_5(1024);
     return(0);
 }
