@@ -7,7 +7,7 @@
 */
 int main(void)
 {
-	unsigned long long int i, fsum, fsumprev, fsumhold;
+	unsigned long int i, fsum, fsumprev, fsumhold;
 
 	fsum = 1;
 	fsumprev = 0;
@@ -17,9 +17,9 @@ int main(void)
 		fsum = fsum + fsumprev; /*fs = 1, 2, 3, 5,*/
 		fsumprev = fsumhold; /* fsp = 1, 1, 2*/
 		if (i != 98)
-			printf("%llu, ", fsum);
+			printf("%lu, ", fsum);
 		else
-			printf("%llu\n", fsum);
+			printf("%lu\n", fsum);
 	}
 	return (0);
 }
