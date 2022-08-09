@@ -22,7 +22,8 @@ int revers(int n)
 */
 int _atoi(char *s)
 {
-    int i , j, k, place, typcast;
+    long int i , j, k, place, typcast;
+    
 
     k = 0;
     for (i = 0 ; s[i] != '\0' ; i++)
@@ -45,5 +46,5 @@ int _atoi(char *s)
             return (j);
         }
     }
-    return (1);
+    return (0);
 }
