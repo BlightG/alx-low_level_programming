@@ -5,10 +5,10 @@
 *
 * Return: Always Zero 0 if Sucess
 */
-int main (void)
+int main(void)
 {
-	long unsigned int i, fsum, fsumprev, fsumhold;
-	
+	unsigned long long int i, fsum, fsumprev, fsumhold;
+
 	fsum = 1;
 	fsumprev = 0;
 	for (i = 1 ; i <= 98; i++)
@@ -21,5 +21,5 @@ int main (void)
 		else
 			printf("%llu\n", fsum);
 	}
-	return(0);
+	return (0);
 }
