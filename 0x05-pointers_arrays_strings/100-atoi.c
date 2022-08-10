@@ -29,10 +29,11 @@ int _atoi(char *s)
 	unsigned int i, j, k, place, typcast;
 
 	k = 0;
+	j = 0;
+	place = 1;
+
 	for (i = 0 ; s[i] != '\0' ; i++)
 	{
-		j = 0;
-		place = 1;
 		while (s[i] >= 48 && s[i] <= 57)
 		{
 			typcast = s[i] - 48;
