@@ -26,7 +26,7 @@ int revers(int n)
 */
 int _atoi(char *s)
 {
-	long int i, j, k, place, typcast;
+	unsigned int i, j, k, place, typcast;
 
 	k = 0;
 	for (i = 0 ; s[i] != '\0' ; i++)
