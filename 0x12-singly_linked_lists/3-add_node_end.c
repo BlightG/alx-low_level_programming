@@ -11,12 +11,12 @@ list_t *add_node_end(list_t **head, const char *str)
     newnode = malloc(sizeof(list_t));
     temppointer = malloc(sizeof(list_t));
     /*printf("head:%p ,newnode:%p ,newnode->next:%p ,tempointer:%p , tempointer->next:%p", head, newnode, newnode->next, temppointer, temppointer->next);*/
-    if ((newnode || temppointer || head) == NULL)
+    if (newnode == NULL || temppointer == NULL || head == NULL)
         return (NULL);
 
     if ( (*head)->next != NULL)
     {
-        temppointer = head;
+        temppointer = (*head)->next;
         while (temppointer->next != NULL)
         {
             temppointer = temppointer->next;
