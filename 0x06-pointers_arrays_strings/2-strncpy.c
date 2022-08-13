@@ -1,20 +1,18 @@
 #include "main.h"
 /**
- *
- *
- *
+*
+*
 */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
+	int i, j;
 
-	for (i = 0; i < n; i++)
-		dest[i] = src [i];
 
-	while (i >= n && dest[i] != '\0')
-	{
-		dest[i] = "0x00";
-		i++;
-	}
-	return (dest);
+	if (dest == NULL || src == NULL)
+		return (NULL);
+	/*for(i = 0 ; dest[i] != '\0' ; i++)
+		;*/
+	for(j = 0 ,i = 0; i < n ; j++, i++)
+		dest[i] = src[j];
+	return(dest);
 }
