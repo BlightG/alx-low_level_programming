@@ -1,7 +1,7 @@
 #include "main.h"
 /**
 * rot13 - rotates characters by 13
-* 
+*
 * @str: input string
 *
 * Return: capitalized string or null
