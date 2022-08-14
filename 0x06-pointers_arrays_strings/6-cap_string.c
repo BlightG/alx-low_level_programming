@@ -1,74 +1,28 @@
 #include "main.h"
 /**
-* cap_string - a function that capitalizes all the words
 *
-*@str: string to be capitalized
 *
-*Return: str or NULL
 */
 char *cap_string(char *str)
 {
-	int i;
+	int i, j;
+	char reference[12] = {' ', '\n', ',', ';', '.', '!', '?', '"', '(', ')', 123, 125};
 
 	i = 0;
-
 	if (str == NULL)
 		return (NULL);
 	while (str[i] != '\0')
 	{
-		switch (str[i])
+		for (j = 0 ; reference[j] != '\0' ; j++)
 		{
-			case(' '):
-				i++;
-				str[i] = str[i] - 32;
-				continue;
-			case('\n'):
-				i++;
-				str[i] = str[i] - 32;
-				continue;
-			case( ',' ):
-				i++;
-				str[i] = str[i] - 32;
-				continue;
-			case(';'):
-				i++;
-				str[i] = str[i] - 32;
-				continue;
-			case('.'):
-				i++;
-				str[i] = str[i] - 32;
-				continue;
-			case('!'):
-				i++;
-				str[i] = str[i] - 32;
-				continue;
-			case('?'):
-				i++;
-				str[i] = str[i] - 32;
-				continue;
-			case('"'):
-				i++;
-				str[i] = str[i] - 32;
-				continue;
-			case('('):
-				i++;
-				str[i] = str[i] - 32;
-				continue;
-			case(')'):
-				i++;
-				str[i] = str[i] - 32;
-				continue;
-			case('{'):
-				i++;
-				str[i] = str[i] - 32;
-				continue;
-			case('}'):
-				i++;
-				str[i] = str[i] - 32;
-				continue;
-			/*case():
-				str[i + 1] = str[i + 1] - 32;
-				break;*/
+			if (str[i] == reference[j])
+			{
+				if(str[i + 1] >=  97 && str[i + 1] <= 122)
+				{
+					i++;
+					str[i] = str[i] - 32;
+				}
+			}
 		}
 		i++;
 	}
