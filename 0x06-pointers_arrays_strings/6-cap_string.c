@@ -9,7 +9,19 @@
 char *cap_string(char *str)
 {
 	int i, j;
-	char reference[13] = {' ', '\n', ',', ';', '.', '!', '?', '"', '(', ')', 123, 125, 9};
+	char reference[13] = {' ',
+				'\n',
+				',',
+				';',
+				'.',
+				'!',
+				'?',
+				'"',
+				'(',
+				')',
+				123,
+				125,
+				9};
 
 	i = 0;
 	if (str == NULL)
@@ -20,7 +32,7 @@ char *cap_string(char *str)
 		{
 			if (str[i] == reference[j])
 			{
-				if(str[i + 1] >=  97 && str[i + 1] <= 122)
+				if (str[i + 1] >=  97 && str[i + 1] <= 122)
 				{
 					i++;
 					str[i] = str[i] - 32;
