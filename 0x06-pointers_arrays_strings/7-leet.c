@@ -18,8 +18,8 @@ char *leet(char *str)
 	char translation[11] = "4433007711";
 
 	i = 0;
-	if (str == NULL)
-		return (NULL);
+	/*if (str == NULL)
+		return (NULL);*/
 	while (str[i] != '\0')
 	{
 		/**
