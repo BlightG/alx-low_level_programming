@@ -1,12 +1,15 @@
 #include "main.h"
 /**
+* cap_string - capitalizes all words of a string
 *
+* @str: input string
 *
+* Return: capitalized string or null
 */
 char *cap_string(char *str)
 {
 	int i, j;
-	char reference[12] = {' ', '\n', ',', ';', '.', '!', '?', '"', '(', ')', 123, 125};
+	char reference[13] = {' ', '\n', ',', ';', '.', '!', '?', '"', '(', ')', 123, 125, 9};
 
 	i = 0;
 	if (str == NULL)
