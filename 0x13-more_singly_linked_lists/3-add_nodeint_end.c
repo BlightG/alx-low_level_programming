@@ -37,14 +37,6 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 			temp = temp->next;
 		temp->next = new_node;
 	}
-	if (head == NULL)
-		free(head);
-	while ((*head)->next != NULL)
-	{
-		temp = *head;
-		*head = (*head)->next;
-		free(temp);
-	}
 	free(new_node);
 	return (*head);
 }
