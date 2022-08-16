@@ -10,17 +10,13 @@ int pop_listint(listint_t **head)
 {
 	listint_t *newhead;
 
-	newhead = malloc(sizeof(listint_t));
 	if (head != NULL)
 	{
 		newhead = (*head)->next;
+		free(*head);
 		head = &newhead;
-		free(newhead);
 		return ((*head)->n);
 	}
 	else
-	{
-		free(newhead);
 		return (0);
-	}
 }
