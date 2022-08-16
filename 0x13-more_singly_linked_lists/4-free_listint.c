@@ -8,16 +8,13 @@ void free_listint(listint_t *head)
 {
 	listint_t *temp;
 
-	temp = malloc(sizeof(listint_t));
-
 	if (head == NULL)
 		free(head);
 	while (head->next != NULL)
 	{
-		temp = head->next;
-		free(head);
-		head = temp;
+		temp =  head;
+		head = head->next;
+		free(temp);
 	}
-	free(temp);
 	free(head);
 }
