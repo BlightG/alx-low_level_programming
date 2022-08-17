@@ -1,61 +1,53 @@
 #include "lists.h"
+
 /**
-* insert_nodeint_at_index - inserts a node at index idx
-*
-* @head: head of linked list
-* @idx: index of  new node
-* @n: node value
-*
-* Return: pointer tonew node or null if it failed
+ * insert_nodeint_at_index - a function that inserts a new node at
+ *                           a given position
+ *
+ * @head: pointer to the first node of the list
+ * @idx: is the index of the list where the new node should be added
+ * @n: element to add to the new node
+ *
+ * Return: NULL if anything fails or the address of the new node
 */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int indexcount;
-	listint_t *temp, *newnode, *shiftnode;
+	listint_t *new_node, *current;
+	unsigned int index;
 
-	/*check if head or newnode null*/
-	newnode = malloc(sizeof(listint_t));
-	shiftnode = malloc(sizeof(listint_t));
-	if (head == NULL || newnode == NULL || shiftnode == NULL)
+	current = *head; /*place first node at current*/
+
+	new_node = malloc(sizeof(listint_t));
+	if ((*head == NULL && idx != 0) || new_node == NULL)
 		return (NULL);
 
-	/*initialize the values of temp and index-counter and n of newnode*/
-	temp = *head;
-	indexcount = 0;
-	newnode->n = n;
-	if (idx == 0 && *head == NULL)
+	new_node->n = n; /* add our element to the new node*/
+
+	/*iterate list to node position idx - 2*/
+	for (index = 0; head != NULL && index < idx - 1; index++)
 	{
-		newnode->next = NULL;
-		return (newnode);
-	}
-	else if (idx == 0 && *head != NULL)
-	{
-		shiftnode = *head;
-		newnode->next= shiftnode;
-		*head = newnode;
-		return (*head);
-	}
-	/**
-	 * The while loop moves along the linked list by recusrsivly
-	 * equating values of temp to the next list value starting from head
-	 * and counting using indexcount until indexcount is one less that idx
-	 */
-	while (indexcount < idx)
-	{
-		if(temp != NULL)
-			temp = temp->next;
-		else
+		current = current->next;
+		if (current == NULL)
 			return (NULL);
-		indexcount++;
 	}
-	/**
-	 * when the list reaches the appropriate node it will insert the newnode
-	 * by changing the pointer to newnode and using shiftnode to save value of the
-	 * succeeding pointer and then making the newnode's next pointer to point to shiftnode;
-	 *
-	 */
-	shiftnode = temp->next;
-	temp->next = newnode;
-	newnode->next = shiftnode;
-	return (newnode);
+
+	if (idx == 0) /*if the index for new node is 0*/
+	{
+		/*first node will be moved to second node*/
+		new_node->next = *head;
+		/*new node will be placed as the first node*/
+		*head = new_node;
+	}
+	else if (current->next) /*if index where to add our new node is not 0*/
+	{
+		new_node->next = current->next; /*place current node after new node*/
+		current->next = new_node;/*set the new node at index idx*/
+	}
+	else /*if node position is not present in the list*/
+	{
+		new_node->next = NULL;/*set next addr as NULL, indicates last node*/
+		current->next = new_node;/*set the new node at the last position in list*/
+	}
+
+	return (new_node);
 }
