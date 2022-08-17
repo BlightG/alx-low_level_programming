@@ -23,7 +23,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	temp = *head;
 	indexcount = 0;
 	newnode->n = n;
-	/*if (idx == 0 && *head == NULL)
+	if (idx == 0 && *head == NULL)
 	{
 		newnode->next = NULL;
 		return (newnode);
@@ -34,7 +34,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		newnode->next= shiftnode;
 		*head = newnode;
 		return (*head);
-	}*/
+	}
 	/**
 	 * The while loop moves along the linked list by recusrsivly
 	 * equating values of temp to the next list value starting from head
