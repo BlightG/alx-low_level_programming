@@ -16,13 +16,25 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	/*check if head or newnode null*/
 	newnode = malloc(sizeof(listint_t));
 	shiftnode = malloc(sizeof(listint_t));
-	if (head == NULL || newnode == NULL || shiftnode == NULL || *head == NULL)
+	if (head == NULL || newnode == NULL || shiftnode == NULL)
 		return (NULL);
 
 	/*initialize the values of temp and index-counter and n of newnode*/
 	temp = *head;
 	indexcount = 0;
 	newnode->n = n;
+	if (idx == 0 && *head == NULL)
+	{
+		newnode->next = NULL;
+		return (newnode);
+	}
+	elseif (idx == 0 && *head != NULL)
+	{
+		shiftnode = *head;
+		newnode->next= shiftnode;
+		*head = newnode;
+		return (*head)
+	}
 	/**
 	 * The while loop moves along the linked list by recusrsivly
 	 * equating values of temp to the next list value starting from head
@@ -43,7 +55,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	 *
 	 */
 	shiftnode = temp->next;
-	temp = newnode;
+	temp->next = newnode;
 	newnode->next = shiftnode;
 	return (newnode);
 }
