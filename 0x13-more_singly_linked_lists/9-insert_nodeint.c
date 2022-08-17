@@ -28,12 +28,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		newnode->next = NULL;
 		return (newnode);
 	}
-	elseif (idx == 0 && *head != NULL)
+	else if (idx == 0 && *head != NULL)
 	{
 		shiftnode = *head;
 		newnode->next= shiftnode;
 		*head = newnode;
-		return (*head)
+		return (*head);
 	}
 	/**
 	 * The while loop moves along the linked list by recusrsivly
