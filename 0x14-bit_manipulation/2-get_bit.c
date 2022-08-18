@@ -1,13 +1,5 @@
 #include "main.h"
 /**
-*
-*/
-int check_n(int n, int index);
-{
-	if
-}
-
-/**
 * get_bit - gets bit at index index from n
 *
 * @n: index comparison
