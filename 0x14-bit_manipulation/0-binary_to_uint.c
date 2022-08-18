@@ -14,10 +14,10 @@ unsigned int _pow(int x, int y)
 
 	ans = 1;
 
-	for(i = 0 ; i < y ; i++)
+	for (i = 0 ; i < y ; i++)
 		ans = ans * x;
 
-	return(ans);
+	return (ans);
 }
 /**
 * binary_to_uint - changes binary to unsigned int
