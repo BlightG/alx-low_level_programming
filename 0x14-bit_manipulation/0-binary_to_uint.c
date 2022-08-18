@@ -6,6 +6,18 @@
 *
 * Return: an unisgned in value or o
 */
+unsigned int _pow(int x, int y)
+{
+	int i;
+	unsigned int ans;
+
+	ans = 1;
+
+	for(i = 0 ; i < y ; i++)
+		ans = ans * x;
+
+	return(ans);
+}
 unsigned int binary_to_uint(const char *b)
 {
 	int i, power;
@@ -36,7 +48,7 @@ unsigned int binary_to_uint(const char *b)
 	 */
 	for (i-- ; i >= 0 ; power++, i--)
 	{
-		binary = binary + ((b[i] - 48) * pow(2, power));
+		binary = binary + ((b[i] - 48) * _pow(2, power));
 	}
 	return (binary);
 }
