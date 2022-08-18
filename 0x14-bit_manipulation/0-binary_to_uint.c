@@ -1,10 +1,11 @@
 #include "main.h"
 /**
-* binary_to_uint - changes binary to unsigned int
+* _pow - similar to pow in maths.h
 *
-* @b: string of a binary number
+* @x: base of power function
+* @y: exponent of power function
 *
-* Return: an unisgned in value or o
+* Return: answer to x raise to y
 */
 unsigned int _pow(int x, int y)
 {
@@ -18,6 +19,13 @@ unsigned int _pow(int x, int y)
 
 	return(ans);
 }
+/**
+* binary_to_uint - changes binary to unsigned int
+*
+* @b: string of a binary number
+*
+* Return: an unisgned in value or o
+*/
 unsigned int binary_to_uint(const char *b)
 {
 	int i, power;
