@@ -1,48 +1,76 @@
-#include <stdlib.h>
-
+#include "main.h"
 /**
- * _realloc - reallocate a memory block using malloc and free
- *
- * @ptr: pointer to previous memory
- * @old_size: old memory array size
- * @new_size: new memory array size
- *
- * Return: pointer to new memory
- *         NULL if it fails
+* revers - reverses an input integer.
+* @n: integr to be reversed
+* Return: retruns the reverse of n
 */
-
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+int revers(int n);
+int revers(int n)
 {
-	char *new_ptr, *temp_ptr;
-	unsigned int i;
+	int reverse, remainder;
 
-	if (new_size == old_size)
-		return (ptr);
-
-	if (ptr == NULL)
+	reverse = 0;
+	while (n != 0)
 	{
-		new_ptr = malloc(new_size);
-		if (new_ptr == NULL)
-			return (NULL);
-		free(ptr);
-		return (new_ptr);
+		remainder = n % 10;
+		reverse = reverse * 10 + remainder;
+		n /= 10;
+	}
+	return (reverse);
+}
+/**
+* _atoi - prints a number from a string of characters
+*
+* @s: pointer to print numbers from
+* Return: int from s or 0
+*/
+int _atoi(char *s)
+{
+	unsigned int i, j, k, place, typcast;
+
+	k = 0;
+	j = 0;
+	place = 1;
+
+	for (i = 0 ; s[i] != '\0' ; i++)
+	{
+		while (s[i] >= 48 && s[i] <= 57)
+		{
+			typcast = s[i] - 48;
+			j =  j + typcast * place;
+			place = place * 10;
+			i++;
+			k++;
+		}
+		if (k)
+		{
+			if (s[i - k - 1] == '-')
+				j = -j;
+			j = revers(j);
+			return (j);
+		}
+	}
+	return (0);
+}
+/**
+* main - Entry point of program
+*
+* @argc: count of multiples
+* @argv: array of strings
+*
+* Return: always 0 if succsess
+*/
+int main(int argc, char *argv[])
+{
+	int i;
+
+	if (!(atoi(argv[1])) || !(atoi(argv[2])) || argc != 3)
+	{
+		printf("Error");
+		exit(98);
 	}
 
-	if (new_size == 0 && ptr != NULL)
-	{
-		free(ptr);
-		return (NULL);
-	}
-
-	new_ptr = malloc(new_size);
-	if (new_ptr == NULL)
-		return (NULL);
-
-	temp_ptr = ptr;
-
-	for (i = 0; i < old_size; i++)
-		new_ptr[i] = temp_ptr[i];
-
-	free(ptr);
-	return (new_ptr);
+	i = (atoi(argv[1])) * (atoi(argv[2]));
+	printf("%d\n", i);
+	return (0);
 }
