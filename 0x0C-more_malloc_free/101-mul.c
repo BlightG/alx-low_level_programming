@@ -5,6 +5,7 @@
 * Return: retruns the reverse of n
 */
 int revers(int n);
+int _atoi(char *s);
 int revers(int n)
 {
 	int reverse, remainder;
@@ -62,15 +63,17 @@ int _atoi(char *s)
 */
 int main(int argc, char *argv[])
 {
-	int i;
+	int mul, num1, num2;
 
-	if (!(atoi(argv[1])) || !(atoi(argv[2])) || argc != 3)
+	num1 = _atoi(argv[1]);
+	num2 = _atoi(argv[2]);
+	if (!(num2) || !(num1) || argc != 3)
 	{
 		printf("Error");
 		exit(98);
 	}
 
-	i = (atoi(argv[1])) * (atoi(argv[2]));
-	printf("%d\n", i);
+	mul = num1 * num2;
+	printf("%d\n", mul);
 	return (0);
 }
