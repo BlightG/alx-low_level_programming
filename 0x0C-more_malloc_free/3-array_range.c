@@ -4,16 +4,15 @@
 *
 *
 */
-int *print_range(int *ptr, int min, int max)
+void print_range(int *ptr, int min, int max)
 {
-int i;
+	int i;
 
-for (i = 0; min <= max ; i++)
-{
-    ptr[i] = min;
-    min++;
-}
-	return (ptr);
+	for (i = 0; min <= max ; i++)
+	{
+		ptr[i] = min;
+		min++;
+	}
 }
 /**
 *
@@ -21,17 +20,20 @@ for (i = 0; min <= max ; i++)
 */
 int *array_range(int min, int max)
 {
-int j;
-int *ptr;
+	int j;
+	int *ptr;
+	(unsigned int) min;
+	(unsigned int) max;
 
-if (min >= max || min < 0)
-    return (NULL);
-j = max - min;
-ptr = malloc((j + 1) * sizeof(int));
-if (ptr == NULL)
-    return (NULL);
+	if (min > max)
+		return (NULL);
 
-print_range(ptr, min, max);
+	j = max - min;
+	ptr = malloc((j + 1) * sizeof(int));
+	if (ptr == NULL)
+		return (NULL);
 
-return (ptr);
+	print_range(ptr, min, max);
+
+	return (ptr);
 }
