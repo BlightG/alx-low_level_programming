@@ -1,9 +1,13 @@
 #include "main.h"
 /**
+* print_range - prints array from min to max
 *
-*
+* @ptr: int array pointer
+* @min: lowest value of an array
+* @max: highest value of an array
 *
 */
+
 void print_range(int *ptr, int min, int max)
 {
 	int i;
@@ -15,15 +19,18 @@ void print_range(int *ptr, int min, int max)
 	}
 }
 /**
+* array_range - funtion to make an array from min to max
 *
+* @min: lowest value of an array
+* @max: highest value of an array
 *
+* Return: a pointer to an array
 */
 int *array_range(int min, int max)
 {
 	int j;
 	int *ptr;
-	(unsigned int) min;
-	(unsigned int) max;
+
 
 	if (min > max)
 		return (NULL);
