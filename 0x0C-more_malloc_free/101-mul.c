@@ -67,10 +67,15 @@ int main(int argc, char *argv[])
 
 	num1 = _atoi(argv[1]);
 	num2 = _atoi(argv[2]);
-	if (!(num2) || !(num1) || argc != 3)
+	if ( num1 > INT_MAX || num2 > INT_MAX)
 	{
 		printf("Error");
-		exit(98);
+		exit (98);
+	}
+	if ( num1 < INT_MIN || num2 < INT_MIN || argc != 3)
+	{
+		printf("Error");
+		exit (98);
 	}
 
 	mul = num1 * num2;
