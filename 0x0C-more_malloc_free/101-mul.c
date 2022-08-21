@@ -69,12 +69,12 @@ int main(int argc, char *argv[])
 	num2 = _atoi(argv[2]);
 	if ( num1 > INT_MAX || num2 > INT_MAX)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit (98);
 	}
 	if ( num1 < INT_MIN || num2 < INT_MIN || argc != 3)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit (98);
 	}
 
