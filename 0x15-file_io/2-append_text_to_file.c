@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* create_file - a function that creates a file
+* append_text_to_file - a function that creates a file
 *
 * @filename: pointer to a string for name of file
 * @text_content: content to be filled inside the file
@@ -11,7 +11,7 @@ int append_text_to_file(const char *filename, char *text_content)
 {
 	int wcount;
 	ssize_t txtlength;
-	int *file;
+	int file;
 
 	/*if the file name is NULL return -1*/
 	if (filename == NULL)
@@ -33,7 +33,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		text_content = "";
 	for (txtlength = 0; text_content[txtlength] != '\0' ; txtlength++)
 		;
-	wcount = write(file, text_content,txtlength);
+	wcount = write(file, text_content, txtlength);
 	if (wcount == -1)
 		return (-1);
 	close(file);
