@@ -33,5 +33,6 @@ int create_file(const char *filename, char *text_content)
 	wcount = write(file, text_content, txtlength);
 	if (wcount == -1)
 		return (-1);
+	close(file);
 	return (1);
 }
