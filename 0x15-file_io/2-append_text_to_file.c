@@ -22,13 +22,8 @@ int append_text_to_file(const char *filename, char *text_content)
 	* read and write permissions to users
 	* if opening fails return -1
 	*/
-<<<<<<< HEAD
 	file = open(filename, O_WRONLY | O_APPEND);
 	if (file == -1)
-=======
-	file = fopen(filename, "a");
-	if (file == NULL)
->>>>>>> c76b441aa46b6ed446aa65d7e51d0bb091dc4961
 		return (-1);
 	/**
 	* txtlength gets the length of the text
@@ -38,15 +33,9 @@ int append_text_to_file(const char *filename, char *text_content)
 		text_content = "";
 	for (txtlength = 0; text_content[txtlength] != '\0' ; txtlength++)
 		;
-<<<<<<< HEAD
 	wcount = write(file, text_content,txtlength);
 	if (wcount == -1)
-=======
-	fseek(file, 0, SEEK_CUR);
-	wcount = fprintf(file, " %s", text_content);
-	if (wcount == 0)
->>>>>>> c76b441aa46b6ed446aa65d7e51d0bb091dc4961
 		return (-1);
-	fclose(file);
+	close(file);
 	return (1);
 }
