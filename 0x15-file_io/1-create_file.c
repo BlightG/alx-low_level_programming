@@ -1,7 +1,11 @@
 #include "main.h"
 /**
+* create_file - a function that creates a file
 *
+* @filename: pointer to a string for name of file
+* @textcontent: content to be filled inside the file
 *
+* Return: 1 on success, -1 on failure
 */
 int create_file(const char *filename, char *text_content)
 {
@@ -19,7 +23,7 @@ int create_file(const char *filename, char *text_content)
 	* read and write permissions to users
 	* if opening fails return -1
 	*/
-	file = open(filename, O_CREAT, 0600);
+	file = open(filename, O_CREAT, O_RDWR, 0600);
 	if (file == -1)
 		return (-1);
 	/**
@@ -35,7 +39,6 @@ int create_file(const char *filename, char *text_content)
 		free(buffer);
 		return (-1);
 	}
-	c = c;
 	readcheck = read(file, buffer,txtlength);
 	wcount = write(file,&c,readcheck);
 	if (readcheck == -1 || wcount == -1)
