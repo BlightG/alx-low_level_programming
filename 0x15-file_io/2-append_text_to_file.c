@@ -22,7 +22,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	* read and write permissions to users
 	* if opening fails return -1
 	*/
-	file = fopen(filename,"a");
+	file = fopen(filename, "a");
 	if (file == NULL)
 		return (-1);
 	/**
@@ -34,9 +34,9 @@ int append_text_to_file(const char *filename, char *text_content)
 	for (txtlength = 0; text_content[txtlength] != '\0' ; txtlength++)
 		;
 	fseek(file, 0, SEEK_CUR);
-	wcount = fwrite(filename, sizeof(char), txtlength, file);
+	wcount = fprintf(file, " %s", text_content);
 	if (wcount == 0)
 		return (-1);
-	close(file);
+	fclose(file);
 	return (1);
 }
