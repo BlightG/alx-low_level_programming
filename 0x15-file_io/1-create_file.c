@@ -11,7 +11,6 @@ int create_file(const char *filename, char *text_content)
 {
 	int file, readcheck;
 	ssize_t txtlength, wcount;
-	char c;
 	char *buffer;
 
 	/*if the file name is NULL return -1*/
@@ -23,7 +22,7 @@ int create_file(const char *filename, char *text_content)
 	* read and write permissions to users
 	* if opening fails return -1
 	*/
-	file = open(filename, O_CREAT, O_RDWR, 0600);
+	file = open(filename, O_CREAT, O_RDWR, O_TRUNC, 0600);
 	if (file == -1)
 		return (-1);
 	/**
@@ -40,8 +39,10 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	}
 	readcheck = read(file, buffer,txtlength);
-	wcount = write(file,&c,readcheck);
-	if (readcheck == -1 || wcount == -1)
+	wcount = write(file,buffer,readcheck);
+	if (readcheck == -1)
 		return (-1);
+	if (wcount == -1)
+		return (-2);
 	return (1);
 }
