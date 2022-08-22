@@ -28,6 +28,8 @@ int create_file(const char *filename, char *text_content)
 	* txtlength gets the length of the text
 	* to be inserted to the file
 	*/
+	if (!text_content)
+		text_content = "";
 	for (txtlength = 0; text_content[txtlength] != '\0' ; txtlength++)
 		;
 	wcount = write(file, text_content, txtlength);
