@@ -5,7 +5,8 @@
 */
 int create_file(const char *filename, char *text_content)
 {
-	int file, readcheck, txtlength;
+	int file, readcheck;
+	size_t txtlength;
 	char *buffer;
 
 	/*if the file name is NULL return -1*/
@@ -36,7 +37,7 @@ int create_file(const char *filename, char *text_content)
 	readcheck = read(file, buffer,txtlength);
 	if (readcheck == -1)
 		return (-1);
-	write(file,buffer,readcheck);
+	write(STDOUT_FILENO,buffer,5);
 	free(buffer);
 	return (1);
 }
