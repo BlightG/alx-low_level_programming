@@ -22,7 +22,7 @@ int main (int argc, char *argv[])
 	}
 	filefrom = open(argv[1], O_RDONLY);
 	read_check = read(filefrom, buffer, 1024);
-	if (read_check == -1 || file from == -1)
+	if (read_check == -1 || filefrom == -1)
 	{
 		dprintf(0,"Error: Can't read from file %s\n", argv[1]);
 		exit(98);
