@@ -15,7 +15,7 @@ int main (int argc, char *argv[])
 		exit(98);
 	}
 	buffer = malloc(sizeof(char) * 1024);
-	if (buffer = NULL)
+	if (buffer == NULL)
 	{
 		free(buffer);
 		return (1);
@@ -41,20 +41,20 @@ int main (int argc, char *argv[])
 	wcount = write(fileto, buffer, 1024);
 	if (wcount == -1)
 	{
-		dprint(0,"Error: Can't write to file %s", argv[2]);
+		dprintf(0,"Error: Can't write to file %s", argv[2]);
 		exit (99);
 	}
 	close_check = close(filefrom);
 	if (close_check == -1)
 	{
-		dprint(0,"Error: Can't close fd %d", filefrom);
+		dprintf(0,"Error: Can't close fd %d", filefrom);
 		exit (100);
 	}
 	close (fileto);
 		if (close_check == -1)
 	{
-		dprint(0,"Error: Can't close fd %d", fileto);
+		dprintf(0,"Error: Can't close fd %d", fileto);
 		exit (100);
 	}
-	return(0;)
+	return(0);
 }
