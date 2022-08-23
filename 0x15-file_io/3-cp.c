@@ -1,5 +1,10 @@
 #include "main.h"
+/**
+*
+*
+*/
 #define MAXSIZE 1024
+
 
 /**
  * __exit - prints error messages and exits with exit number
@@ -30,16 +35,8 @@ int __exit(int error, char *str, int fd)
 			return (0);
 	}
 }
-/**
- * main - entry point for program
- *
- * @argc: count of arguments
- * @argv: a string of arguments strings
- *
- * Return: Always 0 for sucess.
-*/
 
-int main(int argc, char *argv[])
+int main (int argc, char *argv[])
 {
 	ssize_t wcount, read_check, close_check;
 	int filefrom, fileto;
@@ -52,11 +49,12 @@ int main(int argc, char *argv[])
 	if (filefrom == -1)
 		__exit(98, argv[1], 0);
 
-	fileto = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	fileto = open(argv[2],O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (fileto == -1)
 		__exit(99, argv[2], 0);
 
-	read_check = read(filefrom, buffer, MAXSIZE);
+	while ((read_check = read(filefrom, buffer, MAXSIZE)) != 0)
+	{
 		if (read_check == -1)
 			__exit(98, argv[1], 0);
 
@@ -64,7 +62,7 @@ int main(int argc, char *argv[])
 		wcount = write(fileto, buffer, read_check);
 		if (wcount == -1)
 			__exit(99, argv[2], 0);
-	
+	}
 
 	close_check = close(filefrom); /*close file_in*/
 	if (close_check == -1)
@@ -74,5 +72,5 @@ int main(int argc, char *argv[])
 	if (close_check == -1)
 		__exit(100, NULL, fileto);
 
-	return (0);
+	return(0);
 }
