@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 		wcount = write(fileto, buffer, read_check);
 		if (wcount == -1)
 			__exit(99, argv[2], 0);
-	
+
 
 	close_check = close(filefrom); /*close file_in*/
 	if (close_check == -1)
