@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 	if (fileto == -1)
 		__exit(99, argv[2], 0);
 
-	(read_check = read(filefrom, buffer, MAXSIZE)
+	read_check = read(filefrom, buffer, MAXSIZE);
 		if (read_check == -1)
 			__exit(98, argv[1], 0);
 
