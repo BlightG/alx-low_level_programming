@@ -56,8 +56,7 @@ int main(int argc, char *argv[])
 	if (fileto == -1)
 		__exit(99, argv[2], 0);
 
-	while ((read_check = read(filefrom, buffer, MAXSIZE)) != 0)
-	{
+	(read_check = read(filefrom, buffer, MAXSIZE)
 		if (read_check == -1)
 			__exit(98, argv[1], 0);
 
@@ -65,7 +64,7 @@ int main(int argc, char *argv[])
 		wcount = write(fileto, buffer, read_check);
 		if (wcount == -1)
 			__exit(99, argv[2], 0);
-	}
+	
 
 	close_check = close(filefrom); /*close file_in*/
 	if (close_check == -1)
