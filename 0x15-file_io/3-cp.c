@@ -38,7 +38,7 @@ int main (int argc, char *argv[])
 		dprintf(0,"Error: Can't write to file %s", argv[2]);
 		exit(98);
 	}
-	wcount = write(fileto, buffer, 1024);
+	wcount = write(fileto, buffer, read_check);
 	if (wcount == -1)
 	{
 		dprintf(0,"Error: Can't write to file %s", argv[2]);
