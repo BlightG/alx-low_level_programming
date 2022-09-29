@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * add_dnodeinti_end - added a node at the end of doubly linked list
+ * add_dnodeint_end - added a node at the end of doubly linked list
  *
  * @head: head of linked list
  * @n: int value of new node
