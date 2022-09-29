@@ -16,11 +16,11 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	{
 		free(newnode);
 		dprintf(2, "Error: Can't malloc\n");
-	        return (NULL);
+		return (NULL);
 	}
 	newnode->n = n;
 	newnode->next = *head;
 	newnode->prev = NULL;
-	head = &newnode;
+	*head = newnode;
 	return (newnode);
 }
