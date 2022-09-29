@@ -1,12 +1,12 @@
 #include "lists.h"
 /**
- * get_dnodeint_at_index - function that returns the nth node 
+ * get_dnodeint_at_index - function that returns the nth node
  *                         of a doubly linked list
- * 
+ *
  * @head: head of a doubly linked list
  * @index: index of the nth node starting count from 0
  *
- * Returns: pointer to nth node or NULL
+ * Return: pointer to nth node or NULL
 */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
