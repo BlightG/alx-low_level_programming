@@ -13,11 +13,7 @@ typedef struct dlistint_s
 	int n;
 	struct dlistint_s *next;
 	struct dlistint_s *prev;
-}dlistint_t;
-
-#define _POSIX_C_SOURCE  200809L
-#define _GNU_SOURCE
-#define _XOPEN_SOURCE 700
+} dlistint_t;
 
 #include <stdio.h>
 #include <stdlib.h>
