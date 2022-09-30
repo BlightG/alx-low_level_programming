@@ -24,7 +24,8 @@ int main(int argc, char *argv[])
 	 * if (argc !=)
 	 * printf("\nThe username length should be 5 to 10 alphabets\n");
 	 * printf("enter username: ");
-	 * scanf("%s",a);*/
+	 * scanf("%s",a);
+	 */
 	a = argv[1];
 	k = strlen(a);
 	}
@@ -42,6 +43,7 @@ int main(int argc, char *argv[])
 	/**
 	 * printf("\nHit Enter to Exit\n");
 	 * getchar();
-	 * getchar();*/
+	 * getchar();
+	 */
 	return (0);
 }

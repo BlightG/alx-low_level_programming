@@ -1,7 +1,11 @@
 #include "lists.h"
 /**
+ * delete_dnodeint_at_index -delets node at idx and index
  *
+ * @head: head from doubly list
+ * @index: head of index
  *
+ * Return: 1 if sucess or -1 sucess
 */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
