@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 		j++;
 	}
 	c[j] = 0;
-	printf("%s", ic);
+	printf("%s", c);
 	/**
 	 * printf("\nHit Enter to Exit\n");
 	 * getchar();
