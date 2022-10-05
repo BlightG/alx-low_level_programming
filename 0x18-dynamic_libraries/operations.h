@@ -1,7 +1,6 @@
 #ifndef OPERATIONS_H
 #define  OPERATIONS_H
 
-#include <stdlib.h>
 #include <stdio.h>
 
 int add(int a, int b);
