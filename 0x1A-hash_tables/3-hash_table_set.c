@@ -23,7 +23,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         for (i = 0 ; i < index ; i++)
                         ht->array++;
 
-        if(ht->array == NULL)
+        if(*ht->array == NULL)
         {
                 hash_value->next = NULL;
                 ht->array = &hash_value;
@@ -35,7 +35,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
                         temp = temp->next;
                 temp->next = hash_value;
         }
-        printf("ht->array->value: %s\n", (*ht->array)->value);
+        printf("ht->array->value: %s\n", temp->value);
         for (; i > 0 ; i--)
                         ht->array--;
         return (1);
