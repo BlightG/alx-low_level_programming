@@ -25,18 +25,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
         if(*(ht->array) == NULL)
         {
+                /*printf("if\n");
+                printf("ht->array: %p", (void *) *ht->array);*/
                 hash_value->next = NULL;
-                ht->array = &hash_value;
+                *ht->array = hash_value;
         }
         else
-        {
+        {       /*printf("else\n");*/
                 temp = (*ht->array);
-                printf("temp->value: %s", temp->value);
+                /*printf("temp->value: %s", temp->value);*/
                 while(temp->next != NULL)
                         temp = temp->next;
                 temp->next = hash_value;
         }
-        printf("ht->array->value: %s\n", temp->value);
+        /*printf("ht->array->value: %s\n", temp->value);*/
         for (; i > 0 ; i--)
                         ht->array--;
         return (1);
