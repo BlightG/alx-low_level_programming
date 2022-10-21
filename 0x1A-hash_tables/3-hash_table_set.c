@@ -6,7 +6,7 @@
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-        unsigned long int index;
+        unsigned long int index, i;
         hash_node_t *hash_value;
 
         index = key_index((const unsigned char *)key, ht->size);
@@ -22,9 +22,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
                 hash_value->key = (char *) key;
                 hash_value->value = (char *) value;
                 hash_value->next = NULL;
-                ht->array[index] = hash_value;        
+                for (i = 0 ; i <= index ; i++)
+                        ht->array++;
+                ht->array = &hash_value;
         }
-        printf("index: %lu, ht->size: %lu, ht->array[index]->value: %s \n", index, ht->size, ht->array[index]->value);
         return (1);
 
 }
