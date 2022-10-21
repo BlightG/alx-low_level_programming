@@ -30,12 +30,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         }
         else
         {
-                temp = *(ht->array);
+                temp = (*ht->array);
                 while(temp->next != NULL)
                         temp = temp->next;
                 temp->next = hash_value;
         }
-        printf("ht->array->value: %s\n", temp->value);
+        printf("ht->array->value: %s\n", (*ht->array)->value);
         for (; i > 0 ; i--)
                         ht->array--;
         return (1);
