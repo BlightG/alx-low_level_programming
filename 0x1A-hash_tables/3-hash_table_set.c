@@ -21,7 +21,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         hash_value->key = (char *) key;
         hash_value->value = (char *) value;
         hash_value->next = NULL;
-        temp = NULL;
+
         temp_array = ht->array;
         for (i = 0 ; i < index ; i++)
                         temp_array++;
