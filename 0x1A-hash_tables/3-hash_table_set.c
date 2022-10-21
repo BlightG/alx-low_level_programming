@@ -24,5 +24,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
                 hash_value->next = NULL;
                 ht->array[index] = hash_value;        
         }
+        printf("ht->array[index]->value: %s\n", ht->array[index]->value);
         return (1);
+
 }
