@@ -8,16 +8,16 @@
 */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *newhash;
+	hash_table_t newhash;
 	hash_node_t *ht;
 
-	newhash->size = size;
+	newhash.size = size;
 	ht = malloc(sizeof(hash_node_t) * size);
-	if (newhash == NULL)
+	if (ht == NULL)
 	{
 		free(ht);
 		return (NULL);
 	}
-	newhash->array = &ht;
-	return (newhash->array);
+	newhash.array = &ht;
+	return (ht);
 }
