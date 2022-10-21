@@ -20,6 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
         hash_value->key = (char *) key;
         hash_value->value = (char *) value;
+        hash_value->next = NULL;
 
         temp_array = ht->array;
         for (i = 0 ; i < index ; i++)
@@ -27,14 +28,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
         if(*temp_array == NULL)
         {
-                /*printf("if\n");*/
-                hash_value->next = NULL;
+                printf("if\n");
                 *temp_array = hash_value;
                 /*printf("ht->array: %p, *ht->array->value: %s\n", (void *) *temp_array, (*temp_array)->value);*/
         }
         else
         {
-                /*printf("else\n");*/
+                printf("else\n");
                 temp = *temp_array;
                 /*printf("temp->value: %s", temp->value);*/
                 while(temp->next != NULL)
