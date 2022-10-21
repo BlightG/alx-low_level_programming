@@ -19,5 +19,5 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	}
 	newhash.array = &ht;
-	return (ht);
+	return (&newhash);
 }
