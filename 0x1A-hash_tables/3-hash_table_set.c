@@ -12,9 +12,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         index = key_index(key, 1024);
         
 
-        if(ht[index].array == NULL)
+        if(ht->array[index] == NULL)
         {
-                ht[index].array = &hash_value;        
+                ht->array[index] = &hash_value;        
                 hash_value->key = key;
                 hash_value->value = value;
                 hash_value->next = NULL;
