@@ -1,9 +1,9 @@
 # include "hash_tables.h"
 /**
  * hash_djb2 - a function for hashing a string
- * 
+ *
  * @str: a string to be hashed
- * 
+ *
  * Return: an unsigned long int key value pair for the string
 */
 unsigned long int hash_djb2(const unsigned char *str)

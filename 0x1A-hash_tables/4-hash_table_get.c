@@ -1,32 +1,32 @@
 #include "hash_tables.h"
 /**
- * 
- * 
- * 
- * 
+ * hash_table_get - get a value from a hash table
+ *                  given the key for the value
+ *
+ * @ht: pointer to a hash table
+ * @key: key to a possiblee  value in has table
+ *
+ * Return: value associated with the element,
+ *         or NULL if key couldn’t be found
 */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	hash_table_t *temp_array;
 	unsigned long int index;
-	char * keydup;
+	char *keydup;
 	keydup = (char *) key;
 
 	if (ht == NULL)
 		return (NULL);
-	
-	index = key_index((unsigned char *) key, ht-> size);
+
+	index = key_index((unsigned char *) key, ht->size);
 
 	temp_array = (hash_table_t *) ht;
 	if (temp_array->array[index] == NULL)
 		return (NULL);
-	else
-	{
-		if (temp_array->array[index]->key == keydup)
-			return (temp_array->array[index]->value);
-		else
-			return (NULL);
-	}
-	return (NULL);
 
+	if (temp_array->array[index]->key == keydup)
+		return (temp_array->array[index]->value);
+	else
+		return (NULL);
 }
