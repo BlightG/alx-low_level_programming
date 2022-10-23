@@ -15,13 +15,13 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index;
 	char *keydup;
 	keydup = (char *) key;
+	temp_array = (hash_table_t *) ht;
 
 	if (ht == NULL)
 		return (NULL);
 
 	index = key_index((unsigned char *) key, ht->size);
 
-	temp_array = (hash_table_t *) ht;
 	if (temp_array->array[index] == NULL)
 		return (NULL);
 
