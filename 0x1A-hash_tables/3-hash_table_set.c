@@ -32,7 +32,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_value->value = (char *) valuedup;
 	temp_array = ht->array;
 
-	if (temp_array[index] == NULL)
+	if (ht->array[index] == NULL)
 	{
 		hash_value->next = NULL;
 		temp_array[index] = hash_value;
