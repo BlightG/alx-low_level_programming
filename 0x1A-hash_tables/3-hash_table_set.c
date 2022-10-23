@@ -6,7 +6,7 @@
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index, i;
+	unsigned long int index;
 	hash_node_t *hash_value, *temp;
 	hash_node_t **temp_array;
 	const char *keydup, *valuedup;
@@ -29,21 +29,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_value->value = (char *) valuedup;
 
 	temp_array = ht->array;
-	for (i = 0 ; i < index ; i++)
-			temp_array++;
+	/*for (i = 0 ; i < index ; i++)
+			temp_array++;*/
 
-	if(*temp_array == NULL)
+	if(temp_array[index] == NULL)
 	{
 		/*printf("if\n");*/
 		hash_value->next = NULL;
-		*temp_array = hash_value;
+		temp_array[index] = hash_value;
 		/*printf("ht->array: %p, temp_array: %p ", (void *) ht->array, (void *) temp_array);*/
 		/*printf("*ht->array->value: %s\n",  (*temp_array)->value);*/
 	}
 	else
 	{
 		/*printf("else\n");*/
-		temp = *temp_array;
+		temp = temp_array[index];
 		if (temp->key == hash_value->key)
 		{
 			temp->value = hash_value->value;
@@ -51,7 +51,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		else
 		{
 			hash_value->next = temp;
-			*temp_array = hash_value;
+			temp_array[index] = hash_value;
 		}
 		/*printf("temp->value: %s  ", temp->next->value);*/
 	}
