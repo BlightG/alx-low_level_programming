@@ -59,4 +59,3 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/*printf("ht->array: %p, sizeof(ht->array): %d\n", (void *) *temp_array, (int) sizeof(*temp_array));*/
 	return (1);
 }
-
