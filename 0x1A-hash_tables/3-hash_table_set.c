@@ -40,8 +40,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         {
                 /*printf("else\n");*/
                 temp = *temp_array;
-                hash_value->next = temp;
-                *temp_array = hash_value;
+                if (temp->key == hash_value->key)
+                {
+                        temp->value = hash_value->value;
+                }
+                else
+                {
+                        hash_value->next = temp;
+                        *temp_array = hash_value;
+                }
                 /*printf("temp->value: %s  ", temp->next->value);*/
         }
         /*printf("ht->array: %p, temp->value: %p \n", (void *) ht->array, temp->value );*/
