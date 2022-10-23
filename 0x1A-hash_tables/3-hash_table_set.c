@@ -29,11 +29,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_value->key = (char *) keydup;
 	hash_value->value = (char *) valuedup;
 	temp_array = malloc(sizeof(hash_node_t));
-	if (temp_array == NULL)
+	if (!temp_array)
 		return (0);
 	temp_array = ht->array[index];
 
-	if (temp_array == NULL)
+	if (!temp_array)
 	{
 		hash_value->next = NULL;
 		temp_array = hash_value;
