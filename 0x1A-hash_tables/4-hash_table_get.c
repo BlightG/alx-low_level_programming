@@ -26,8 +26,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (temp_array->array[index] == NULL)
 		return (NULL);
 
-	if (temp_array->array[index]->key == keydup)
+	if (strcmp(temp_array->array[index]->key, keydup) == 0)
 		return (temp_array->array[index]->value);
-	else
+	else 
 		return (NULL);
 }
