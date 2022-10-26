@@ -14,9 +14,10 @@ void hash_table_print(const hash_table_t *ht)
 		for (i = 0; i < ht->size; i++)
 		{
 			temp = ht->array[i];
+			printf("temp = %p, ht->array[%ld] = %p", (void *) temp, i , (void *) ht->array);
 			while (temp)
 			{
-				printf("i = %ld '%s': '%s'", i, ht->array[i]->key, ht->array[i]->value);
+				printf("'%s': '%s'", ht->array[i]->key, ht->array[i]->value);
 				printf(", ");
 				temp = temp->next;
 			}
