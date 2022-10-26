@@ -26,23 +26,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_value->key = strdup(key);
 	hash_value->value = strdup(value);
 	hash_value->next = NULL;
-
 	temp_array = ht->array[index];
 
-	if (!ht->array[index])
-		ht->array[index] = hash_value;
-	else
+	if (ht->array[index] == NULL)
 	{
-		while (temp_array)
+		ht->array[index] = hash_value;
+		return (1);
+	}
+	while (temp_array != NULL)
+	{
+		printf("temp_array->key = %s", temp_array->key);
+		if (temp_array->key == hash_value->key)
 		{
-			if (temp_array->key == hash_value->key)
-			{
-				hash_value->next = temp_array;
-				ht->array[index] = hash_value;
-				return (1);
-			}
-			temp_array = temp_array->next;
+			hash_value->next = temp_array;
+			ht->array[index] = hash_value;
+			return (1);
 		}
+		temp_array = temp_array->next;
 	}
 	return (0);
 }
