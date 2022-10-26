@@ -17,6 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL)
 		return (0);
+
 	index = key_index((const unsigned char *)key, ht->size);
 	hash_value = malloc(sizeof(hash_node_t));
 	if (hash_value == NULL)
@@ -25,25 +26,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_value->key = strdup(key);
 	hash_value->value = strdup(value);
 	hash_value->next = NULL;
-	
-	temp_array = malloc(sizeof(hash_node_t));
-	if (!temp_array)
-		return (0);
+
 	temp_array = ht->array[index];
 
-	if (!temp_array)
-		temp_array = hash_value;
+	if (!ht->array[index])
+		ht->array[index] = hash_value;
 	
 	else
 	{
-		if (temp_array->key == hash_value->key)
-			temp_array->value = hash_value->value;
+		if (ht->array[index]->key == hash_value->key)
+			ht->array[index]->value = hash_value->value;
 		else
 		{
-			hash_value->next = temp_array;
-			temp_array = hash_value;
+			ht->array[index]->next = temp_array;
+			ht->array[index] = hash_value;
 		}
 	}
-	printf(" hash->array[%ld] = %p", index, (void *) ht->array);
 	return (1);
 }
