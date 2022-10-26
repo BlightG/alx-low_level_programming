@@ -26,11 +26,15 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		return (NULL);
 
 	temp_array = ht->array[index];
+	
 	while (temp_array)
 	{
+		/*printf("temp_array->key = %s, temp_array->value = %s\n", temp_array->key, temp_array->value);*/
 		if (strcmp(temp_array->key, keydup) == 0)
 			return (temp_array->value);
 		temp_array = temp_array->next;
+		printf("ht->array[index]->key = %s, temp_array = %p\n", ht->array[index]->key, (void *) temp_array->next);
+
 	}
 	return (NULL);
 }

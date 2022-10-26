@@ -24,7 +24,9 @@ int main(void)
 	hash_table_set(ht, "c", "isfun");
 	hash_table_set(ht, "Australia", "Canberra");
 	hash_table_set(ht, "Canada", "Ottawa");
-
+	hash_table_set(ht, "mentioner", "2nd collision");
+	hash_table_set(ht, "hetairas", "1st collision");
+	
 	value = hash_table_get(ht, "python");
 	printf("%s:%s\n", "python", value);
 	value = hash_table_get(ht, "Bob");
@@ -41,5 +43,9 @@ int main(void)
 	printf("%s:%s\n", "Canada", value);
 	value = hash_table_get(ht, "Australia");
 	printf("%s:%s\n", "Australia", value);
+	value = hash_table_get(ht, "hetairas");
+	printf("%s:%s\n", "hetairas", value);
+	value = hash_table_get(ht, "mentioner");
+	printf("%s:%s\n", "mentioner", value);
 	return (EXIT_SUCCESS);
 }

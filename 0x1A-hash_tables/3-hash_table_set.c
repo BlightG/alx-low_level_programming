@@ -31,16 +31,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!ht->array[index])
 		ht->array[index] = hash_value;
-
 	else
 	{
-		if (ht->array[index]->key == hash_value->key)
-			ht->array[index]->value = hash_value->value;
-		else
+		while (temp_array)
 		{
-			ht->array[index]->next = temp_array;
-			ht->array[index] = hash_value;
+			if (temp_array->key == hash_value->key)
+			{
+				hash_value->next = temp_array;
+				ht->array[index] = hash_value;
+				return (1);
+			}
+			temp_array = temp_array->next;
 		}
 	}
-	return (1);
+	return (0);
 }
