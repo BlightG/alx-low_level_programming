@@ -36,7 +36,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	while (temp_array != NULL)
 	{
 		printf("temp_array->key = %s", temp_array->key);
-		if (temp_array->key == hash_value->key)
+		if (strcmp(temp_array->key, hash_value->key))
 		{
 			hash_value->next = temp_array;
 			ht->array[index] = hash_value;
