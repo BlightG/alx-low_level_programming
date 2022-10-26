@@ -30,8 +30,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	{
 		if (strcmp(temp_array->key, keydup) == 0)
 			return (temp_array->value);
-		else 
-			temp_array = temp_array->next;
+		temp_array = temp_array->next;
 	}
 	return (NULL);
 }
