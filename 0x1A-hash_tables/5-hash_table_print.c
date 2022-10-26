@@ -15,7 +15,7 @@ void hash_table_print(const hash_table_t *ht)
 			exit(EXIT_FAILURE);
 	
 		printf("{");
-		for (i = 0; i < ht->size; i++)
+		for (i = 0; i < 200 ; i++)
 		{
 			temp = ht->array[i];
 			printf("temp = %p, ht->array[%ld] = %p\n", (void *) temp, i, (void *) ht->array);
