@@ -41,6 +41,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			ht->array[index] = hash_value;
 			return (1);
 		}
+		else
+		{
+			temp_array->value = hash_value->value;
+			return (1);
+		}
 		temp_array = temp_array->next;
 	}
 	return (0);
