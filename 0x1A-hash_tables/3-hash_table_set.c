@@ -31,7 +31,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!ht->array[index])
 		ht->array[index] = hash_value;
-	
+
 	else
 	{
 		if (ht->array[index]->key == hash_value->key)

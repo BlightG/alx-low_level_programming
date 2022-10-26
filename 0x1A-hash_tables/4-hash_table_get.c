@@ -14,6 +14,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_table_t *temp_array;
 	unsigned long int index;
 	char *keydup;
+
 	keydup = (char *) key;
 	temp_array = (hash_table_t *) ht;
 
