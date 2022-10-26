@@ -44,5 +44,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			temp_array = hash_value;
 		}
 	}
+	printf(" hash->array[%ld] = %p", index, (void *) ht->array);
 	return (1);
 }
