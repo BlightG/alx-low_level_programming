@@ -1,6 +1,7 @@
 #include "main.h"
 int *Unisgend_to_binary(unsigned long int, int* array);
 void print_array(int *array, size_t size);
+float poww(double x, double y);
 /**
  * 
 */
@@ -17,11 +18,11 @@ int *Unisgend_to_binary(unsigned long int xor, int* array)
 	printf("i = %i\n", (int) i);
 	while (i >= 1)
 	{
-		if (xor >= pow(2, i) && xor < pow(2, (i + 1)))
+		if (xor >= poww(2, i) && xor < poww(2, (i + 1)))
 		{
-			printf("pow(2 , i) = %f\n", pow((double) 2, (double) i));
+			printf("pow(2 , i) = %f\n", poww((double) 2, (double) i));
 			array[j] = 1;
-			xor = xor - pow(2 , i);
+			xor = xor - poww(2 , i);
 		}
 		else
 			array[j] = 0;
@@ -29,6 +30,20 @@ int *Unisgend_to_binary(unsigned long int xor, int* array)
 		j++;
 	}
 	return (array);
+}
+/**
+ * 
+*/
+float poww(double x, double y)
+{
+	double i;
+	float pow = 1;
+
+	for(i = 0 ; i < y ; i++)
+	{
+		pow = pow * x;
+	}
+	return (pow);
 }
 /**
  * print_array - Prints an array of integers
