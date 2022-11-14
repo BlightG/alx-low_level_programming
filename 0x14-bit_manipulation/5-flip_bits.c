@@ -14,13 +14,13 @@ int *Unisgend_to_binary(unsigned long int xor, int* array)
 		return (NULL);
 	
 	memset(array, 0, i + 1);
-	print_array(array, (sizeof(unsigned long int) * 8)+ 1);
+	/*print_array(array, (sizeof(unsigned long int) * 8)+ 1);*/
 	printf("i = %i\n", (int) i);
 	while (i >= 1)
 	{
 		if (xor >= poww(2, i) && xor < poww(2, (i + 1)))
 		{
-			printf("pow(2 , i) = %f\n", poww((double) 2, (double) i));
+			/*printf("pow(2 , i) = %f\n", poww((double) 2, (double) i));*/
 			array[j] = 1;
 			xor = xor - poww(2 , i);
 		}
