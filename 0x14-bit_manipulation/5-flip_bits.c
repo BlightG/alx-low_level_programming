@@ -13,7 +13,7 @@ int *Unisgend_to_binary(unsigned long int xor, int* array)
 	if (xor == 0)
 		return (NULL);
 	
-	memset(array, 0, i + 1);
+	memset(array, 0, i);
 	/*print_array(array, (sizeof(unsigned long int) * 8)+ 1);*/
 	printf("i = %i\n", (int) i);
 	while (i >= 1)
