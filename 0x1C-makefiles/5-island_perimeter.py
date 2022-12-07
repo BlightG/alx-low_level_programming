@@ -15,7 +15,7 @@ def island_perimeter(grid):
         if not isinstance(grid[i], list):
             return None
         for j in range(len(grid[i])):
-            if not isinstance(grid[i][j], list):
+            if grid[i][j] not in (1, 0):
                 return None
             if i != 0 and grid[i][j] == 1:
                 peri += check_above(i, j, grid)
