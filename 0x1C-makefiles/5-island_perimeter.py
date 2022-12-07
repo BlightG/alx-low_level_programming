@@ -1,4 +1,4 @@
-#/usr/bin/pytyhon3
+#/usr/bin/python3
 """ a function that returns the perimeter of an island """
 
 
