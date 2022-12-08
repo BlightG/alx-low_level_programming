@@ -15,17 +15,29 @@ def island_perimeter(grid):
         if not isinstance(grid[i], list):
             return None
         for j in range(len(grid[i])):
+
             if grid[i][j] not in (1, 0):
                 return None
+
             if i != 0 and grid[i][j] == 1:
                 peri += check_above(i, j, grid)
+            elif i == 0 and grid[i][j] == 1:
+                peri += 1
+
             if j != 0 and grid[i][j] == 1:
                 peri += check_left(i, j, grid)
+            elif j == 0 and grid[i][j] == 1:
+                peri += 1
+    
             if j != len(grid[i]) - 1 and grid[i][j] == 1:
                 peri += check_right(i, j, grid)
+            elif j == len(grid[i]) - 1 and grid[i][j] == 1:
+                peri += 1
+            
             if i != len(grid) - 1 and grid[i][j] == 1:
                 peri += check_below(i, j, grid)
-
+            elif i == len(grid) - 1 and grid[i][j] == 1:
+                peri += 1  
     return peri
 
 
