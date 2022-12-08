@@ -28,16 +28,16 @@ def island_perimeter(grid):
                 peri += check_left(i, j, grid)
             elif j == 0 and grid[i][j] == 1:
                 peri += 1
-    
+
             if j != len(grid[i]) - 1 and grid[i][j] == 1:
                 peri += check_right(i, j, grid)
             elif j == len(grid[i]) - 1 and grid[i][j] == 1:
                 peri += 1
-            
+
             if i != len(grid) - 1 and grid[i][j] == 1:
                 peri += check_below(i, j, grid)
             elif i == len(grid) - 1 and grid[i][j] == 1:
-                peri += 1  
+                peri += 1
     return peri
 
 
