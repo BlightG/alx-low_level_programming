@@ -9,7 +9,6 @@ NAME = school
 all: $(OBJ) 
 	[ -e "m.h" ] && $(CC) $(OBJ) -o $(NAME)
 
-
 clean:
 	$(RM) *~ $(NAME)
 oclean:
