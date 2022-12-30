@@ -9,35 +9,30 @@
 */
 int _strcmp(char *s1, char *s2)
 {
-	int i, j, f;
+	int s1i, s2i, count;
 
-	i = 0;
-	j = 0;
-	f = 0;
-	while ((s2[j] != '\0') && (s1[i] != '\0'))
+	s1i =  s2i = count = 0;
+	while ((s1[s1i] != '\0') && (s2[s2i] != '\0'))
 	{
-		if (s1[i] != s2[j])
-		{
-			if (s1[i] > s2[j])
-			{
-				f = 1;
-				break;
-			}
-			else if (s1[i] < s2[j])
-			{
-				f = -1;
-				break;
-			}
-		}
-		else
-		{
-			j++;
-			i++;
-		}
+		/* printf("while 1, ");*/
+		count += s1[s1i] - s2[s2i]; 
+		/* printf("count = %d, s1[%d] = %c ,s2[%d] = %c \n",count, s1i, s1[s1i], s2i, s2[s2i]); */
+		s1i++;
+		s2i++;
 	}
-	if ((s2[j] != '\0') && (s1[i] == '\0'))
-		f = -1;
-	if ((s1[j] != '\0') && (s2[i] == '\0'))
-		f = 1;
-	return (f);
+	while (s1[s1i] != '\0')
+	{
+		/* printf("while 2, "); */
+		count += s1[s1i] - 65;		
+		s1i++;
+		/* printf("count = %d, s1[%d] = %c ,s2[%d] = %c \n",count, s1i, s1[s1i], s2i, s2[s2i]); */
+	}
+	while (s2[s2i] != '\0')
+	{
+		/* printf("while 3, "); */
+		count -= s2[s2i] - 65;		
+		s2i++;
+		/* printf("count = %d, s1[%d] = %c ,s2[%d] = %c \n",count, s1i, s1[s1i], s2i, s2[s2i]); */
+	}
+	return (count);
 }
