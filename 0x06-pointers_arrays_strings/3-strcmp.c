@@ -23,14 +23,14 @@ int _strcmp(char *s1, char *s2)
 	while (s1[s1i] != '\0')
 	{
 		/* printf("while 2, "); */
-		count += s1[s1i] - 65;		
+		count -= s1[s1i] - 106;		
 		s1i++;
 		/* printf("count = %d, s1[%d] = %c ,s2[%d] = %c \n",count, s1i, s1[s1i], s2i, s2[s2i]); */
 	}
 	while (s2[s2i] != '\0')
 	{
 		/* printf("while 3, "); */
-		count -= s2[s2i] - 65;		
+		count += s2[s2i] - 106;		
 		s2i++;
 		/* printf("count = %d, s1[%d] = %c ,s2[%d] = %c \n",count, s1i, s1[s1i], s2i, s2[s2i]); */
 	}
