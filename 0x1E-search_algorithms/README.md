@@ -55,7 +55,7 @@ You will be asked to write files contianing big O notations. Please use this for
 
 ## Tasks
 
-### - [ ] 0.Linear search
+### 0.Linear search
 
 Write a function that searches for a value in an array of integers using the [Linear search algorithm](https://en.wikipedia.org/wiki/Linear_search)
 - **Prototype** : `int linear_search(int *array, size_t size, int value);`
