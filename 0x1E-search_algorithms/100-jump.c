@@ -81,9 +81,7 @@ int linear_srch(int *array, size_t size, int value, size_t offset)
 	{
 		printf("Value checked array[%ld] = [%d]\n", i + offset, array[i]);
 		if (array[i] == value)
-		{
 			return (i);
-		}
 	}
 	return (-1);
 }
