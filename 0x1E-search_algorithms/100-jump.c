@@ -29,7 +29,7 @@ int jump_search(int *array, size_t size, int value)
 			{
 				printf("Value found between indexes [%d] and [%ld]\n",
 					0, index);
-			return (linear_srch(&array[0],
+				return (linear_srch(&array[0],
 					jump_size + 1, value, 0));
 			}
 			else
@@ -38,6 +38,8 @@ int jump_search(int *array, size_t size, int value)
 					index - jump_size, index);
 				result = linear_srch(&array[index - jump_size],
 					jump_size + 1, value, index - jump_size);
+				if (result == -1)
+					return (-1);
 				return (result + (index - jump_size));
 			}
 		}
