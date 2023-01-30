@@ -1,87 +1,47 @@
-#include"search_algos.h"
-int linear_srch(int *array, size_t size, int value, size_t offset);
+#include "search_algos.h"
+#include <math.h>
+
 /**
- * jump_search - that searches for a value in a sorted array of integers
- *		 using the Jump search algorithm
+ * jump_search - Function to search for value in array using
+ * the jump search algorithm
  *
- * @array: a pointer to the first element of the array to search in
- * @size: number of elements in @array
- * @value: is the value to search for
+ * @array: pointer to the first element of the array to search in.
+ * @size: number of elements in array.
+ * @value: value to be serached for.
  *
- * Return: the first index where value is located
- *          If value is not present in array or if array is NULL,
- *	     your function must return -1
-*/
+ * Return: First index where value is located in array. 0 if not found
+ * or array is empty.
+ */
+
 int jump_search(int *array, size_t size, int value)
 {
-	size_t jump_size = round(sqrt(size));
-	size_t index = 0;
-	int result;
-
-	if (!array || size == 0)
-		return (-1);
-
-	while (index < size)
-	{
-		if (array[index] >= value)
-		{
-			if (index <= jump_size)
-			{
-				printf("Value found between indexes [%d] and [%ld]\n",
-					0, index);
-				return (linear_srch(&array[0],
-					jump_size + 1, value, 0));
-			}
-			else
-			{
-				printf("Value found between indexes [%ld] and [%ld]\n",
-					index - jump_size, index);
-				result = linear_srch(&array[index - jump_size],
-					jump_size + 1, value, index - jump_size);
-				if (result == -1)
-					return (-1);
-				return (result + (index - jump_size));
-			}
-		}
-		else if (array[index] < value)
-		{
-			if ((index + jump_size) < size)
-			{
-				printf("Value checked array[%ld] = [%d]\n", index, array[index]);
-				index = index + jump_size;
-			}
-			else
-			{
-				printf("Value found between indexes [%ld] and [%ld]\n",
-					index, index + jump_size);
-				return (linear_srch(&array[index], size - index, value, index));
-			}
-		}
-	}
-	return (-1);
-}
-/**
- * linear_srch - performs a linear seach on int array
- *                 to find index of value
- *
- * @array: unsorted int array to be searhced with linear search
- * @size: size of @array
- * @value: value to be searched for
- * @offset: used to offeset index for print case
- *
- * Return: index of @value or -1 if failed
-*/
-int linear_srch(int *array, size_t size, int value, size_t offset)
-{
-	size_t i;
+	size_t count, step, min, max;
 
 	if (!array)
 		return (-1);
-	for (i = 0; i < size ; i++)
+
+	step = sqrt(size);
+	min = 0;
+	max = step;
+
+	printf("Value checked array[%ld] = [%d]\n", min, array[min]);
+
+	while (array[max] < value && max < size)
 	{
-		printf("Value checked array[%ld] = [%d]\n", i + offset, array[i]);
-		if (array[i] == value)
-			return (i);
+		min += step;
+		max += step;
+		printf("Value checked array[%ld] = [%d]\n", min, array[min]);
 	}
+	printf("Value found between index [%ld] and [%ld]\n", min, max);
+
+	for (count = min; count <= max; count++)
+	{
+		if (count > size - 1)
+			break;
+		printf("Value checked array[%ld] = [%d]\n", count, array[count]);
+		if (array[count] == value)
+			return (count);
+	}
+
 	return (-1);
 }
