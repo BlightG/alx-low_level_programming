@@ -1,4 +1,5 @@
 #include"search_algos.h"
+int linear_srch(int *array, size_t size, int value, size_t offset);
 /**
  * jump_search - that searches for a value in a sorted array of integers
  *		 using the Jump search algorithm
@@ -24,13 +25,21 @@ int jump_search(int *array, size_t size, int value)
 	{
 		if (array[index] >= value)
 		{
-			if (index == 0)
-				return (-1);
-			printf("Value found between indexes [%ld] and [%ld]\n",
-				index - jump_size, index);
-			result = linear_search(&array[index - jump_size],
-				jump_size + 1, value);
-			return (result + (index - jump_size));
+			if (index <= jump_size)
+			{
+				printf("Value found between indexes [%d] and [%ld]\n",
+					0, index);
+			return (linear_srch(&array[0],
+					jump_size + 1, value, 0));
+			}
+			else
+			{
+				printf("Value found between indexes [%ld] and [%ld]\n",
+					index - jump_size, index);
+				result = linear_srch(&array[index - jump_size],
+					jump_size + 1, value, index - jump_size);
+				return (result + (index - jump_size));
+			}
 		}
 		else if (array[index] < value)
 		{
@@ -43,23 +52,24 @@ int jump_search(int *array, size_t size, int value)
 			{
 				printf("Value found between indexes [%ld] and [%ld]\n",
 					index, index + jump_size);
-				return (linear_search(&array[index], size - index, value));
+				return (linear_srch(&array[index], size - index, value, index));
 			}
 		}
 	}
 	return (-1);
 }
 /**
- * linear_search - performs a linear seach on int array
+ * linear_srch - performs a linear seach on int array
  *                 to find index of value
  *
  * @array: unsorted int array to be searhced with linear search
  * @size: size of @array
  * @value: value to be searched for
+ * @offset: used to offeset index for print case
  *
  * Return: index of @value or -1 if failed
 */
-int linear_search(int *array, size_t size, int value)
+int linear_srch(int *array, size_t size, int value, size_t offset)
 {
 	size_t i;
 
@@ -67,7 +77,7 @@ int linear_search(int *array, size_t size, int value)
 		return (-1);
 	for (i = 0; i < size ; i++)
 	{
-		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+		printf("Value checked array[%ld] = [%d]\n", i + offset, array[i]);
 		if (array[i] == value)
 		{
 			return (i);
